@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-06-04" view-index="0" gantt-divider-location="433" resource-divider-location="300" version="3.1.3100" locale="es_419">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2021-06-16" view-index="0" gantt-divider-location="433" resource-divider-location="300" version="3.1.3100" locale="es_419">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Name" width="221" order="0"/>
@@ -59,6 +59,7 @@
             <task id="40" name="Hito: Documento analisis" color="#8cb6ce" meeting="false" start="2021-07-06" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="12" name="Diseño" meeting="false" start="2021-07-06" duration="5" complete="0" expand="true">
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
             <task id="41" name="8-Crear casos de uso" color="#8cb6ce" meeting="false" start="2021-07-06" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
                 <depend id="42" type="2" difference="0" hardness="Strong"/>
             </task>
@@ -72,23 +73,35 @@
             <task id="45" name="12-Elaborar DEV" color="#8cb6ce" meeting="false" start="2021-07-16" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
                 <depend id="46" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="46" name="Hito: Documento de diseño" color="#8cb6ce" meeting="false" start="2021-07-20" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true"/>
+            <task id="46" name="Hito: Documento de diseño" color="#8cb6ce" meeting="false" start="2021-07-20" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+                <depend id="47" type="2" difference="0" hardness="Strong"/>
+            </task>
         </task>
-        <task id="19" name="Codificación" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true">
-            <task id="47" name="13-Crear base de datos" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="48" name="14-Desarrollar modulo A" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="49" name="15-Desarrollar modulo B" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="50" name="16-Desarrollar los modulos necesarios" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="51" name="Hito: Sistema" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
+        <task id="19" name="Codificación" color="#000000" meeting="false" start="2021-07-23" duration="5" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+            <depend id="25" type="2" difference="0" hardness="Strong"/>
+            <task id="47" name="13-Crear base de datos" color="#8cb6ce" meeting="false" start="2021-07-23" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+                <depend id="48" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="48" name="14-Desarrollar modulo A" color="#8cb6ce" meeting="false" start="2021-07-27" duration="1" complete="0" thirdDate="2021-07-23" thirdDate-constraint="0" expand="true">
+                <depend id="49" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="49" name="15-Desarrollar modulo B" color="#8cb6ce" meeting="false" start="2021-07-30" duration="1" complete="0" thirdDate="2021-07-23" thirdDate-constraint="0" expand="true">
+                <depend id="50" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="50" name="16-Desarrollar los modulos necesarios" color="#8cb6ce" meeting="false" start="2021-08-03" duration="1" complete="0" thirdDate="2021-07-23" thirdDate-constraint="0" expand="true">
+                <depend id="51" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="51" name="Hito: Sistema" color="#8cb6ce" meeting="false" start="2021-08-06" duration="1" complete="0" thirdDate="2021-07-23" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="25" name="Pruebas" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true">
-            <task id="52" name="17-Pruebas unitarias" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="53" name="18-Pruebas e intregracion" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="54" name="Hito: Documento prueba" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
+        <task id="25" name="Pruebas" color="#000000" meeting="false" start="2021-08-10" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+            <task id="52" name="17-Pruebas unitarias" meeting="false" start="2021-08-10" duration="1" complete="0" expand="true"/>
+            <task id="53" name="18-Pruebas e intregracion" meeting="false" start="2021-08-10" duration="1" complete="0" expand="true"/>
+            <task id="54" name="Hito: Documento prueba" meeting="false" start="2021-08-10" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="29" name="Implementacion" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true">
-            <task id="55" name="19-Instalacion del sistema al usuario" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
-            <task id="56" name="Hito: Sistema instalado" meeting="false" start="2021-06-08" duration="1" complete="0" expand="true"/>
+        <task id="29" name="Implementacion" color="#000000" meeting="false" start="2021-08-13" duration="1" complete="0" thirdDate="2021-06-08" thirdDate-constraint="0" expand="true">
+            <task id="55" name="19-Instalacion del sistema al usuario" meeting="false" start="2021-08-13" duration="1" complete="0" expand="true"/>
+            <task id="56" name="Hito: Sistema instalado" meeting="false" start="2021-08-13" duration="1" complete="0" expand="true"/>
         </task>
     </tasks>
     <resources/>

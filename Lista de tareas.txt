@@ -2,7 +2,7 @@ Relevamiento
 
 1-Definir objetivos y beneficios
 2-Entrevistar persona 
-3-Obtener inormacion del cliente
+3-Obtener informacion del cliente
 4-Comprobar idea planteada
 Hito: Minuta de reunion
 
@@ -17,7 +17,7 @@ Diseño
 
 8-Crear casos de uso
 9-Diseño de interfaces
-10-Diseñar diagramas dee clases
+10-Diseñar diagramas de clases
 11-Definir arquitectura
 12-Elaborar DEV
 Hito: Documento de diseño
