@@ -1,0 +1,31 @@
+Preguntas funcionales: 
+
+Cual es el metodo que utilizaban hasta el momento?
+Cual es exactamente la finalidad que busca tener el programa?
+Como piensan que debe ser el programa?
+Que campos deveria tener la base de datos?
+Cuales son las metodologias de trabajo del establecimiento?
+Con que dispositivos cuentan?
+Quien se encargara del manejo del programa? , Esta capacitado?
+Que esperan de nosotros?
+
+
+
+No funcional:
+
+Tienen alguna sugerencia sobre el apartado visual? (Poseen algun logo que 
+quieran agregar, colores utilizados freguentemente)
+
+
+
+
+
+Preguntas brazuca
+que hacen en su sector?
+cual seria la finalidad del sistema?
+en que dispositivos te gustaria tener el programa?
+con que recursos cuentan?
+alguna funcion que quieran que tenga el programa en especifico
+en donde se guardarian los datos?
+todos los usuarios van a tener los mismo permisos?
+
