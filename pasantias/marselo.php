@@ -1,7 +1,3 @@
-<?php
-include_once 'php/conexion.php';
-
-?>
 <!DOCTYPE html>
 <html>
 
