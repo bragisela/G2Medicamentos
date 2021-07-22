@@ -1,5 +1,5 @@
 <?php
-$link = 'mysql:host=localhost;dbname=dappianodatatable';
+$link = 'mysql:host=localhost;dbname=flores';
 $users = 'root';
 $pass = '';
 
