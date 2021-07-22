@@ -3,12 +3,10 @@
 <head>
 	<title></title>
 </head>
-<frameset rows="50%, 500%" frameborder="no">
-	<frame scrolling="no" src="header.php" name="superior"/>
-		<frameset cols="10%">
-			<frame src="" name="framecentro"/>
-		</frameset>
-
+<frameset rows="50%,500%" frameborder="no" scrolling="no">
+	<frame src="header.php" name="superior"></frame>
+	<frame src="" name="framecentro"></frame>
+</frameset>
 <body>
 </body>
 </html>
