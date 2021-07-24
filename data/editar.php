@@ -42,37 +42,37 @@ if($_GET){
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
 
+<Center>
     <title>Editar</title>
     </head>
     <body>
-        <div class="container">
+    <link rel="stylesheet" href="css/styleedit.css" type="text/css">
+        <div class="form-signin">
             <div class="col-md-12">    
                 <?php if($_GET): ?>
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
-                        Ingresar Nick
-                        <input type="text" class="form-control mt-3" name="Nick"  value="<?php echo $resultado_unico['Nick'] ?>">
-                        Ingresar Nombre
-                        <input type="text" class="form-control mt-3" name="Nombre" value="<?php echo $resultado_unico['Nombre'] ?>">
-                        Ingresar Apellido
-                        <input type="text" class="form-control mt-3" name="Apellido" value="<?php echo $resultado_unico['Apellido'] ?>">
-                        Ingresar Genero
-                        <input type="text" class="form-control mt-3" name="Genero" value="<?php echo $resultado_unico['Genero'] ?>">
+                        <h5>Ingresar Nick</h5>
+                        <input type="text" class="form-control" name="Nick"  value="<?php echo $resultado_unico['Nick'] ?>">
+                        <h5> Ingresar Nombre</h5>
+                        <input type="text" class="form-control" name="Nombre" value="<?php echo $resultado_unico['Nombre'] ?>">
+                        <h5>Ingresar Apellido</h5>
+                        <input type="text" class="form-control" name="Apellido" value="<?php echo $resultado_unico['Apellido'] ?>">
+                        <h5>Ingresar Genero</h5>
+                        <input type="text" class="form-control" name="Genero" value="<?php echo $resultado_unico['Genero'] ?>">
                         <input type="hidden" name="id" value="<?php echo $resultado_unico['id'] ?>">
-                        <button class="btn-btn-primary mt-3">Editar</button><br>
+                        <button class="btn btn-outline-success" >Editar</button><br>
                         <br>
-                        <center><button class="b"><a href="index.php">Volver al Datatable</a></button></center>
+                        <center><a class="btn btn-outline-success" href="index.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>
         </div>
     </body>
+    </Center>
 </html>
