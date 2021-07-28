@@ -1,8 +1,8 @@
 <?php
-include_once 'php/conexionn.php';
+include_once 'php/conexion.php';
 
 
-$sql_leer='SELECT * FROM registro';
+$sql_leer='SELECT * FROM pasantias';
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
@@ -63,14 +63,14 @@ $usuarios=$gsent->fetchAll();
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     
-    <form action="marselo.php" method="POST">
+    <form action="index.php" method="POST">
     <div class="form-floating">
-      <input type="text" class="form-control" name="usuario" placeholder="">
+      <input type="text" class="form-control" name="Nombre" placeholder="">
       <label for="usuario">usuario</label>
     </div>
 
     <div class="form-floating">
-      <input type="password" class="form-control" name="clave" placeholder="">
+      <input type="password" class="form-control" name="Clave" placeholder="">
       <label for="clave">clave</label>
     </div>
 
