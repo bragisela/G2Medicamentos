@@ -28,7 +28,7 @@
                 <a class="btn btn-outline-success" href="stockinicial.php" target="framecentro">stockinicial</a></li>
               </li>
             </ul>
-            <button align="right" class="boton7" type=""><a  href="recetas.php" class="fuente" target="framecentro">cerrar cesion</a></button>
+            <a class="btn btn-outline-danger" href="recetas.php" target="framecentro">Cerrar sesion</a></li>
           </div>
         </div>
       </nav>    
