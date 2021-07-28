@@ -9,8 +9,6 @@ $gsent->execute();
 
 $resultado = $gsent->fetchAll();
 
-//var_dump($resultado);
-
 //Agregar
 if($_POST){
     $nick =  $_POST['Nick'];
@@ -43,24 +41,30 @@ if($_POST){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="bocs/style.css" type="text/css">
     
 <title>agregar</title>
     </head>
+   
+    <center>
     <body>
-        <div class="container">
+   
+        <div class="form-signin">
             <div class="col-md-12">    
             <?php if(!$_GET): ?>
           <h1>Agregar Personas</h1>
           <form method="POST">
+            
               <h6>Nick</h6><input type="text" class="form-control mt-3" name="Nick">
               <h6>Nombre</h6><input type="text" class="form-control mt-3" name="Nombre">
               <h6>Apellido</h6><input type="text" class="form-control mt-3" name="Apellido">
               <h6>Genero</h6><input type="text" class="form-control mt-3" name="Genero">
               <h6>Clave</h6><input type="text" class="form-control mt-3" name="Clave">
               <button class="btn btn-primary mt-3">Agregar</button>
+              <center><a class="btn btn-outline-success" href="index.php" >Volver al Datatable</a></center>
+            </center>
           </form>
 <?php endif ?>
                 

@@ -8,9 +8,9 @@ $genero = $_GET['Genero'];
 $apellido = $_GET['Apellido'];
 $nick = $_GET['Nick'];
 
-$sql_editar = 'UPDATE usuarios SET Nick=?,Apellido=?,Nombre=?,Genero=? WHERE id=?';
+$sql_editar = 'UPDATE usuarios SET Nick=?,Nombre=?,Apellido=?,Genero=? WHERE id=?';
 $sentencia_editar = $pdo->prepare($sql_editar);
-$sentencia_editar->execute(array($nombre,$genero,$nick,$apellido,$id));
+$sentencia_editar->execute(array($nick,$nombre,$apellido,$genero,$id));
 
 $pdo = null;
 $sentencia_editar = null;

@@ -51,7 +51,7 @@ if($_GET){
     <title>Editar</title>
     </head>
     <body>
-    <link rel="stylesheet" href="css/styleedit.css" type="text/css">
+    <link rel="stylesheet" href="bocs/style.css" type="text/css">
         <div class="form-signin">
             <div class="col-md-12">    
                 <?php if($_GET): ?>
@@ -66,7 +66,7 @@ if($_GET){
                         <h5>Ingresar Genero</h5>
                         <input type="text" class="form-control" name="Genero" value="<?php echo $resultado_unico['Genero'] ?>">
                         <input type="hidden" name="id" value="<?php echo $resultado_unico['id'] ?>">
-                        <button class="btn btn-outline-success" >Editar</button><br>
+                        <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
                         <center><a class="btn btn-outline-success" href="index.php" >Volver al Datatable</a></center>
                     </form>
