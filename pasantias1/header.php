@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -16,7 +16,7 @@
                 <a class="btn btn-outline-success" href="clsbotiquin.php" target="framecentro">clsbotiquin</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-outline-success" href="clearing.php" target="framecentro">clearing</a>
+                <a class="btn btn-outline-success" href="clearing/clearing.php" target="framecentro">clearing</a>
               </li>
               <li class="nav-item">
                 <a class="btn btn-outline-success" href="salidas.php" target="framecentro">salidas</a>

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `clearing` (
   `Caps` text NOT NULL,
   `Cod. Medic.` varchar(14) NOT NULL,
   `Cantidad` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `clearing`
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `clsbotiquin` (
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
   `Stock inicial` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `clsbotiquin`
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `recetas` (
   `Cantidad 1` int(5) NOT NULL,
   `2. Cod. Medic.` varchar(15) NOT NULL,
   `Cantidad 2` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `recetas`
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `salidas` (
   `Cod. Medic.` varchar(15) NOT NULL,
   `Cantidad` int(5) NOT NULL,
   `Motivo` char(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `salidas`
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `stockinicial` (
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
   `Stock inicial` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `stockinicial`
@@ -104,7 +104,3 @@ CREATE TABLE IF NOT EXISTS `stockinicial` (
 INSERT INTO `stockinicial` (`Codigo`, `Medicamento`, `Stock inicial`) VALUES
 (12346, 'asdasdasdasadasdasdasdasdasdasdasdasdasdasasasd', 12366);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

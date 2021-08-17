@@ -1,7 +1,7 @@
 <?php
 include_once 'php/conexion.php';
 session_start();
-
+/* 
 $_SESSION ["usuario_login"] = $_POST["Nombre"];
 $_SESSION ["clave_login"] = $_POST["Clave"];
 
@@ -28,7 +28,7 @@ if(password_verify($clave_login, $resultado['Clave']))
 }else{ 
   header("Location: logueo.php");
   
-}
+} */
 
 ?>
 <!DOCTYPE html>

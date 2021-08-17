@@ -42,8 +42,8 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Cod. Medic.']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
                     <td><?php echo $usuario['Motivo']?></td>
-                        <a href="editar.php?id=<?php echo $usuario['id']?>" class="float-right"> <i class="fas fa-pencil-alt"></i></a>
-                        <a href="eliminar.php?id=<?php echo $usuario['id']?>" class="float-right ml-3">
+                        <a href="editar.php?id=<?php echo $usuario['Cod. Medic.']?>" class="float-right"> <i class="fas fa-pencil-alt"></i></a>
+                        <a href="eliminar.php?id=<?php echo $usuario['Cod. Medic.']?>" class="float-right ml-3">
                       <i class="fas fa-trash-alt"></i></a>
                   </tr>
                     <?php
