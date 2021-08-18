@@ -42,7 +42,7 @@ $usuarios=$gsent->fetchAll();
                      <thead>
                      <th>Fecha</th>
                      <th>Caps</th>
-                     <th>Cod. Medic.</th>
+                     <th>Codigo medicamento</th>
                      <th>Cantidad</th>
                      <th>accion</th>
 
@@ -54,13 +54,13 @@ $usuarios=$gsent->fetchAll();
                     <tr>
                     <td><?php echo $usuario['Fecha']?></td>
                     <td><?php echo $usuario['Caps']?></td>
-                    <td><?php echo $usuario['Cod_Medic']?></td>
+                    <td><?php echo $usuario['Cod_medico']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
 
                     <td>
                           <center>
-                        <a href="editar.php?id=<?php echo $usuario['id']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
-                        <a href="eliminar.php?id=<?php echo $usuario['id']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
+                        <a href="editar.php?Idclearing=<?php echo $usuario['Idclearing']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
+                        <a href="eliminar.php?Idclearing=<?php echo $usuario['Idclearing']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
                       </a></center>
                   </tr>
                     <?php

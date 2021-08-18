@@ -2,8 +2,8 @@
 include_once '../php/conexion.php';
 
 
-$UsID=$_GET['id'];
-$sql_eliminar='DELETE FROM clearing WHERE id=?';
+$UsID=$_GET['Idclearing'];
+$sql_eliminar='DELETE FROM clearing WHERE Idclearing=?';
 $eliminar=$pdo->prepare($sql_eliminar);
 $eliminar->execute(array($UsID));
 

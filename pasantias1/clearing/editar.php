@@ -17,9 +17,9 @@ if($_POST){
     $fecha = $_POST['Fecha'];
     $cantidad = $_POST['Cantidad'];
     $caps = $_GET['Caps'];
-    $Cod_Medic = $_POST['Cod_Medic'];
+    $Cod_Medic = $_POST['Cod_medico'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Cantidad,Caps,Cod_Medic) VALUES (?,?,?,?)';
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Cantidad,Caps,Cod_medico) VALUES (?,?,?,?)';
     $sentencia_agregar = $pdo->prepare($sql_agregar);
     $sentencia_agregar->execute(array($cantidad,$fecha,$caps,$Cod_Medic));
 
@@ -30,8 +30,8 @@ if($_POST){
 }
 
 if($_GET){
-    $id = $_GET['id'];
-    $sql_unico = 'SELECT * FROM clearing WHERE id=?';
+    $id = $_GET['Idclearing'];
+    $sql_unico = 'SELECT * FROM clearing WHERE Idclearing=?';
     $gsent_unico = $pdo->prepare($sql_unico);
     $gsent_unico->execute(array($id));
     $resultado_unico = $gsent_unico->fetch();
@@ -70,10 +70,10 @@ if($_GET){
                         <input type="text" class="form-control" name="Caps" value="<?php echo $resultado_unico['Caps'] ?>">
 
                         <h5>Ingresar Codigo Del Medicamento</h5>
-                        <input type="text" class="form-control" name="Cod_Medic" value="<?php echo $resultado_unico['Cod_Medic'] ?>">
+                        <input type="text" class="form-control" name="Cod_medico" value="<?php echo $resultado_unico['Cod_medico'] ?>">
 
 
-                        <input type="hidden" name="id" value="<?php echo $resultado_unico['id'] ?>">
+                        <input type="hidden" name="Idclearing" value="<?php echo $resultado_unico['Idclearing'] ?>">
                         <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
                         <center><a class="btn btn-outline-success" href="clearing.php" >Volver al Datatable</a></center>
