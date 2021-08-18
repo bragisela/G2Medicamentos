@@ -15,7 +15,7 @@ if($_POST){
     $Medicamento = $_POST['Medicamento'];
     $Stockinicial= $_POST['Stock_inicial'];
 
-    $sql_agregar = 'INSERT INTO clearing (Codigo,Medicamento,Stock_inicial) VALUES (?,?,?)';
+    $sql_agregar = 'INSERT INTO stockinicial (Codigo,Medicamento,Stock_inicial) VALUES (?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
     $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial));
 
