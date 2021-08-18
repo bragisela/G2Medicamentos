@@ -1,6 +1,6 @@
 <?php
 // conexion con la base
-include_once 'php/conexion.php';
+include_once '../php/conexion.php';
 
 // llamado a la tabla
 $sql_leer='SELECT * FROM stockinicial';
@@ -18,8 +18,20 @@ $usuarios=$gsent->fetchAll();
     <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet"href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <a href="agregar.php" ><img src="https://img.icons8.com/ios/50/000000/add--v1.png"></a>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-0">
+                <div class="card">
+                    <div class="card-body d-flex">
+                        <h3>Desea agregar un nuevo medicamento</h3>
+                        <a href="agregar.php" class="btn btn-primary btn-lg ml-auto">Agregar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </head>
   <body>
       <div class="container">
@@ -39,9 +51,9 @@ $usuarios=$gsent->fetchAll();
                     <tr>
                     <td><?php echo $usuario['Codigo']?></td>
                     <td><?php echo $usuario['Medicamento']?></td>
-                    <td><?php echo $usuario['Stock inicial']?></td>
-                        <a href="editar.php?id=<?php echo $usuario['Codigo']?>" class="float-right"> <i class="fas fa-pencil-alt"></i></a>
-                        <a href="eliminar.php?id=<?php echo $usuario['Codigo']?>" class="float-right ml-3">
+                    <td><?php echo $usuario['Stock_inicial']?></td>
+                        <a href="editar.php?Idstockinicial=<?php echo $usuario['Idstockinicial']?>" class="float-right"> <i class="fas fa-pencil-alt"></i></a>
+                        <a href="eliminar.php?Idstockinicial=<?php echo $usuario['Idstockinicial']?>" class="float-right ml-3">
                       <i class="fas fa-trash-alt"></i></a>
                   </tr>
                     <?php
@@ -50,28 +62,25 @@ $usuarios=$gsent->fetchAll();
                 </tbody>
             </table>
            </div>
-       </div> 
+       </div>
     </div>
-   
-    
 
-    <!--JavaScript -->
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>   
-    <!-- links js -->
-    <script src="javascripts/js.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+    <script src="../Datatables/js.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->
-    <script src="Datatables/datatables.min.js"></script>
+    <script src="../Datatables/datatables.min.js"></script>
     <!-- Botones -->
-    <script src="Datatables/Butons-1.7.0/js/dataTables.buttons.min.js"></script>
-    <script src="Datatables/JSZip-2.5.0/jszip.min.js"></script>
-    <script src="Datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
-    <script src="Datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
-    <script src="Datatables/Butons-1.7.0/js/buttons.html5.min.js"></script>
-    
-
-    
-    
+    <script src="../Datatables/Butons-1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="../Datatables/JSZip-2.5.0/jszip.min.js"></script>
+    <script src="../Datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script src="../Datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="../Datatables/Butons-1.7.0/js/buttons.html5.min.js"></script>
   </body>
+
+
 </html>

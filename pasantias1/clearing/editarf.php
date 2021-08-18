@@ -14,4 +14,4 @@ $sentencia_editar->execute(array($Cod_Medic,$caps,$fecha,$cantidad,$id));
 
 $pdo = null;
 $sentencia_editar = null;
-header("location:../index.php");
+header("location:clearing.php");

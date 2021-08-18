@@ -2,8 +2,8 @@
 include_once '../php/conexion.php';
 
 
-$UsID=$_GET['Idclsbotiquin'];
-$sql_eliminar='DELETE FROM clsbotiquin WHERE Idclsbotiquin=?';
+$UsID=$_GET['Idstockinicial'];
+$sql_eliminar='DELETE FROM stockinicial WHERE Idstockinicial=?';
 $eliminar=$pdo->prepare($sql_eliminar);
 $eliminar->execute(array($UsID));
 
@@ -11,4 +11,4 @@ $eliminar->execute(array($UsID));
 
 $agregar=null;
 $pdo=null;
-header('location:clsbotiquin.php');
+header('location:stockinicial.php');

@@ -25,7 +25,7 @@
                 <a class="btn btn-outline-success" href="recetas.php" target="framecentro">recetas</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-outline-success" href="stockinicial.php" target="framecentro">stockinicial</a></li>
+                <a class="btn btn-outline-success" href="Stockinicial/stockinicial.php" target="framecentro">stockinicial</a></li>
               </li>
             </ul>
             <a class="btn btn-outline-danger" href="recetas.php" target="framecentro">Cerrar sesion</a></li>

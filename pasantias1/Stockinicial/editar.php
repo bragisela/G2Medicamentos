@@ -2,20 +2,22 @@
 
 include_once '../php/conexion.php';
 
-$sql_leer = 'SELECT * FROM clsbotiquin';
+$sql_leer = 'SELECT * FROM stockinicial';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
 
 $resultado = $gsent->fetchAll();
 
+
 if($_GET){
-    $id = $_GET['Idclsbotiquin'];
-    $sql_unico = 'SELECT * FROM clsbotiquin WHERE Idclsbotiquin=?';
+    $id = $_GET['Idstockinicial'];
+    $sql_unico = 'SELECT * FROM stockinicial WHERE Idstockinicial=?';
     $gsent_unico = $pdo->prepare($sql_unico);
     $gsent_unico->execute(array($id));
     $resultado_unico = $gsent_unico->fetch();
 }
+
 ?>
 
 <!doctype html>
@@ -36,16 +38,21 @@ if($_GET){
                 <?php if($_GET): ?>
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
-
-                      <h6>Ingrese el Stock inicial</h6><input type="number" class="form-control mt-3" name="Stock_inicial"  value="<?php echo $resultado_unico['Stock_inicial'] ?>">
-                      <h6>Ingrese Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>">
-                      <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Codigo "value="<?php echo $resultado_unico['Codigo'] ?>">
+                        <h5>Ingresar fecha</h5>
+                        <input type="text" class="form-control" name="Codigo"  value="<?php echo $resultado_unico['Codigo'] ?>">
 
 
-                        <input type="hidden" name="Idclsbotiquin" value="<?php echo $resultado_unico['Idclsbotiquin'] ?>">
-                        <button class="btn btn-outline-primary" type="submit" >Editar</button><br>
+                        <h5> Ingresar Cantidad</h5>
+                        <input type="text" class="form-control" name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>">
+
+                        <h5>Ingresar caps</h5>
+                        <input type="text" class="form-control" name="Stock_inicial" value="<?php echo $resultado_unico['Stock_inicial'] ?>">
+
+
+                        <input type="hidden" name="Idstockinicial" value="<?php echo $resultado_unico['Idstockinicial'] ?>">
+                        <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="clsbotiquin.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="stockinicial.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

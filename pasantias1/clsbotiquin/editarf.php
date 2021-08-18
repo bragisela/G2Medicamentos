@@ -2,12 +2,12 @@
 
 include_once '../php/conexion.php';
 
-$stockinicial = $_POST['Stockinicial'];
+$stockinicial = $_POST['Stock_inicial'];
 $medicamento = $_POST['Medicamento'];
 $codigo = $_POST['Codigo'];
-$id =$_GET['id'];
+$id = $_GET['Idclsbotiquin'];
 
-$sql_editar = 'UPDATE clsbotiquin SET  Stockinicial=?,Medicamento=?,Codigo=? WHERE id=?';
+$sql_editar = 'UPDATE clsbotiquin SET  Stock_inicial=?,Medicamento=?,Codigo=? WHERE Idclsbotiquin=?';
 $sentencia_editar = $pdo->prepare($sql_editar);
 $sentencia_editar->execute(array($stockinicial,$Medicamento,$codigo,$id));
 

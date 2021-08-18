@@ -9,25 +9,6 @@ $gsent->execute();
 
 $resultado = $gsent->fetchAll();
 
-//var_dump($resultado);
-
-//Agregar
-if($_POST){
-
-    $fecha = $_POST['Fecha'];
-    $cantidad = $_POST['Cantidad'];
-    $caps = $_GET['Caps'];
-    $Cod_Medic = $_POST['Cod_medico'];
-
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Cantidad,Caps,Cod_medico) VALUES (?,?,?,?)';
-    $sentencia_agregar = $pdo->prepare($sql_agregar);
-    $sentencia_agregar->execute(array($cantidad,$fecha,$caps,$Cod_Medic));
-
-
-    $sentencia_agregar = null;
-    $pdo = null;
-    header('location:clearing.php');
-}
 
 if($_GET){
     $id = $_GET['Idclearing'];

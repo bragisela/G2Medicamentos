@@ -52,12 +52,12 @@ $usuarios=$gsent->fetchAll();
                     <tr>
                     <td><?php echo $usuario['Codigo']?></td>
                     <td><?php echo $usuario['Medicamento']?></td>
-                    <td><?php echo $usuario['Stockinicial']?></td>
+                    <td><?php echo $usuario['Stock_inicial']?></td>
 
                     <td>
                     <center>
-                    <a href="editar.php?id=<?php echo $usuario['id']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
-                    <a href="eliminar.php?id=<?php echo $usuario['id']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
+                    <a href="editar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
+                    <a href="eliminar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
                     </a></center>
                       </tr>
                     <?php
