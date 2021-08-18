@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `clsbotiquin` (
   `Idclsbotiquin` int(5) NOT NULL AUTO_INCREMENT,
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
-  `Stock inicial` int(5) NOT NULL,
+  `Stock_inicial` int(5) NOT NULL,
   PRIMARY KEY (Idclsbotiquin)
 );
 
@@ -28,16 +28,16 @@ CREATE TABLE IF NOT EXISTS `recetas` (
   `Fecha` date NOT NULL,
   `Apellido` text NOT NULL,
   `Nombres` text NOT NULL,
-  `Tipo DNI` text NOT NULL,
-  `Nro. DNI` int(9) NOT NULL,
-  `Fecha nacimiento` date NOT NULL,
+  `Tipo_DNI` text NOT NULL,
+  `Nro_DNI` int(9) NOT NULL,
+  `Fecha_nacimiento` date NOT NULL,
   `Sexo` text NOT NULL,
-  `Diagnostico 1` char(255) NOT NULL,
-  `Diagnostico 2` char(255) NOT NULL,
+  `Diagnostico1` char(255) NOT NULL,
+  `Diagnostico2` char(255) NOT NULL,
   `1Cod_medico` varchar(15) NOT NULL,
-  `Cantidad 1` int(5) NOT NULL,
+  `Cantidad1` int(5) NOT NULL,
   `2Cod_medico` varchar(15) NOT NULL,
-  `Cantidad 2` int(5) NOT NULL,
+  `Cantidad2` int(5) NOT NULL,
   PRIMARY KEY (Idrecetas)
 );
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `stockinicial` (
   `Idstockinicial` int(5) NOT NULL AUTO_INCREMENT,
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
-  `Stock inicial` int(5) NOT NULL,
+  `Stock_inicial` int(5) NOT NULL,
   PRIMARY KEY (Idstockinicial)
 );
 
