@@ -2,7 +2,7 @@
 
 include_once '../php/conexion.php';
 
-$sql_leer = 'SELECT * FROM clearing';
+$sql_leer = 'SELECT * FROM clsbotiquin';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
@@ -11,19 +11,18 @@ $resultado = $gsent->fetchAll();
 
 //Agregar
 if($_POST){
-    $fecha = $_POST['Fecha'];
-    $caps = $_POST['Caps'];
-    $cantidad = $_POST['Cantidad'];
-    $Cod_Medic = $_POST['Cod_Medic'];
+    $stockinicial = $_POST['Stockinicial'];
+    $medicamento = $_POST['Medicamento'];
+    $codigo = $_POST['Codigo'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Caps,Cantidad,Cod_Medic) VALUES (?,?,?,?)';
+    $sql_agregar = 'INSERT INTO clsbotiquin (Stockinicial,Medicamento,Codigo) VALUES (?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$caps,$cantidad,$Cod_Medic));
+    $agregar->execute(array($stockinicial,$medicamento,$codigo));
 
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:clearing.php');
+    header('location:clsbotiquin.php');
   }
   if($_GET){
     $UsID=$_GET['id'];
@@ -37,7 +36,7 @@ if($_POST){
 <!doctype html>
 <html lang="en">
   <head>
-
+    .
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,12 +56,12 @@ if($_POST){
           <h1>Agregar Personas</h1>
           <form method="POST">
 
-              <h6>Fecha</h6><input type="date" class="form-control mt-3" name="Fecha">
-              <h6>Caps</h6><input type="text" class="form-control mt-3" name="Caps" >
-              <h6>Cantidad</h6><input type="text" class="form-control mt-3" name="Cantidad" >
-              <h6>Codigo Medicicamento</h6><input type="text" class="form-control mt-3" name="Cod_Medic" >
+              <h6>Ingrese el Stock inicial</h6><input type="number" class="form-control mt-3" name="Stockinicial" >
+              <h6>Ingrese Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" >
+              <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Codigo">
+
               <button class="btn btn-primary mt-3">Agregar</button>
-              <center><a class="btn btn-outline-success" href="../index.php" >Volver al Datatable</a></center>
+              <center><a class="btn btn-outline-success" href="clsbotiquin.php" >Volver al Datatable</a></center>
             </center>
           </form>
 <?php endif ?>

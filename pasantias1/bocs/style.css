@@ -1,8 +1,12 @@
+.card-body{
+     margin: 20px auto;
+     padding: 10px;
+}
 body {
   color: #869abf;
 background: #a5f0c4;
 font-family: 'Segoe UI', sans-serif;
-font-size: 8px;
+font-size: 12px;
 }
 .form-signin {
     background-color: #cfeaff;
@@ -36,7 +40,7 @@ input[type="submit"] {
   }
   input[type="submit"]:hover {
     background-color: #15fcfc;
-    
+
   }
   .back{
     padding: 10px;
@@ -52,7 +56,7 @@ input[type="submit"] {
   .btn{
     padding: 10px;
     margin: 15px auto;
-    
+
   }
   .form-signin {
     background-color: #cfeaff;
@@ -64,4 +68,3 @@ input[type="submit"] {
     border-radius: 16px;
     margin: 0 auto;
   }
-  

@@ -17,7 +17,7 @@ $(document).ready(function() {
             },
         dom: 'Bfrtip',
         responsive: 'true',
-    buttons: [ 
+    buttons: [
 	{
 		extend:    'excelHtml5',
 		text:      '<img src="https://img.icons8.com/color/40/000000/ms-excel.png"/>',

@@ -2,7 +2,7 @@
 
 include_once '../php/conexion.php';
 
-$sql_leer = 'SELECT * FROM clearing';
+$sql_leer = 'SELECT * FROM clsbotiquin';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
@@ -14,24 +14,23 @@ $resultado = $gsent->fetchAll();
 //Agregar
 if($_POST){
 
-    $fecha = $_POST['Fecha'];
-    $cantidad = $_POST['Cantidad'];
-    $caps = $_GET['Caps'];
-    $Cod_Medic = $_POST['Cod_Medic'];
+    $stockinicial = $_POST['Stockinicial'];
+    $medicamento = $_POST['Medicamento'];
+    $codigo = $_POST['Codigo'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Cantidad,Caps,Cod_Medic) VALUES (?,?,?,?)';
+    $sql_agregar = 'INSERT INTO clsbotiquin (Stockinicial,Medicamento,Codigo) VALUES (?,?,?)';
     $sentencia_agregar = $pdo->prepare($sql_agregar);
-    $sentencia_agregar->execute(array($cantidad,$fecha,$caps,$Cod_Medic));
+    $sentencia_agregar->execute(array($stockinicial,$Medicamento,$codigo));
 
 
     $sentencia_agregar = null;
     $pdo = null;
-    header('location:clearing.php');
+    header('location:clsbotiquin.php');
 }
 
 if($_GET){
     $id = $_GET['id'];
-    $sql_unico = 'SELECT * FROM clearing WHERE id=?';
+    $sql_unico = 'SELECT * FROM clsbotiquin WHERE id=?';
     $gsent_unico = $pdo->prepare($sql_unico);
     $gsent_unico->execute(array($id));
     $resultado_unico = $gsent_unico->fetch();
@@ -57,26 +56,16 @@ if($_GET){
                 <?php if($_GET): ?>
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
-                        <h5>Ingresar fecha</h5>
-                        <input type="text" class="form-control" name="Fecha"  value="<?php echo $resultado_unico['Fecha'] ?>">
 
-
-                        <h5> Ingresar Cantidad</h5>
-                        <input type="text" class="form-control" name="Cantidad" value="<?php echo $resultado_unico['Cantidad'] ?>">
-
-
-
-                        <h5>Ingresar caps</h5>
-                        <input type="text" class="form-control" name="Caps" value="<?php echo $resultado_unico['Caps'] ?>">
-
-                        <h5>Ingresar Codigo Del Medicamento</h5>
-                        <input type="text" class="form-control" name="Cod_Medic" value="<?php echo $resultado_unico['Cod_Medic'] ?>">
+                      <h6>Ingrese el Stock inicial</h6><input type="number" class="form-control mt-3" name="Stockinicial"  value="<?php echo $resultado_unico['Stockinicial'] ?>">
+                      <h6>Ingrese Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>">
+                      <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Codigo "value="<?php echo $resultado_unico['Codigo'] ?>">
 
 
                         <input type="hidden" name="id" value="<?php echo $resultado_unico['id'] ?>">
                         <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="clearing.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="clsbotiquin.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>
