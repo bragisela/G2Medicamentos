@@ -19,10 +19,10 @@
                 <a class="btn btn-outline-success" href="clearing/clearing.php" target="framecentro">clearing</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-outline-success" href="salidas.php" target="framecentro">salidas</a>
+                <a class="btn btn-outline-success" href="salidas/salidas.php" target="framecentro">salidas</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-outline-success" href="recetas.php" target="framecentro">recetas</a>
+                <a class="btn btn-outline-success" href="recetas/recetas.php" target="framecentro">recetas</a>
               </li>
               <li class="nav-item">
                 <a class="btn btn-outline-success" href="Stockinicial/stockinicial.php" target="framecentro">stockinicial</a></li>
