@@ -57,7 +57,7 @@ if($_GET){
                         <input type="hidden" name="Idclearing" value="<?php echo $resultado_unico['Idclearing'] ?>">
                         <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="clearing.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="../clearing.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

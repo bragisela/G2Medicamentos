@@ -11,4 +11,4 @@ $eliminar->execute(array($UsID));
 
 $agregar=null;
 $pdo=null;
-header('location:stockinicial.php');
+header('location:../stockinicial.php');

@@ -11,31 +11,30 @@ $resultado = $gsent->fetchAll();
 
 //Agregar
 if($_POST){
-    $fecha = $_GET['Fecha'];
-    $apellido = $_GET['Apellido'];
-    $nombres = $_GET['Nombres'];
-    $tipo_dni = $_GET['Tipo_DNI'];
-    $nro_dni = $_GET['Nro_DNI'];
-    $fecha_naci = $_GET['Fecha_nacimiento'];
-    $sexo = $_GET['Sexo'];
-    $diagnostico1 = $_GET['Diagnostico1'];
-    $diagnostico2 = $_GET['Diagnostico2'];
-    $cod_medico1 = $_GET['1Cod_medico'];
-    $cant1 = $_GET['Cantidad1'];
-    $cod_medico2 = $_GET['2Cod_medico'];
-    $cant2 = $_GET['Cantidad2'];
+    $fecha = $_POST['Fecha'];
+    $apellido = $_POST['Apellido'];
+    $nombres = $_POST['Nombres'];
+    $tipo_dni = $_POST['Tipo_DNI'];
+    $nro_dni = $_POST['Nro_DNI'];
+    $fecha_naci = $_POST['Fecha_nacimiento'];
+    $sexo = $_POST['Sexo'];
+    $diagnostico1 = $_POST['Diagnostico1'];
+    $diagnostico2 = $_POST['Diagnostico2'];
+    $cod_medico1 = $_POST['1Cod_medico'];
+    $cant1 = $_POST['Cantidad1'];
+    $cod_medico2 = $_POST['2Cod_medico'];
+    $cant2 = $_POST['Cantidad2'];
 
     $sql_agregar = 'INSERT INTO recetas (Fecha,Apellido,Nombres,Tipo_DNI,Nro_DNI,Fecha_nacimiento,
         Sexo,Diagnostico1,Diagnostico2,1Cod_medico,Cantidad1,2Cod_medico,Cantidad2) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$fecha_naci,
-        $sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2,$id));
+    $agregar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$fecha_naci,$sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2));
 
 
     //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:recetas.php');
+    header('location:../recetas.php');
 }
   if($_GET){
     $UsID=$_GET['Idrecetas'];
@@ -57,8 +56,8 @@ if($_POST){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../bocs/style.css" type="text/css">
 
-<title>Agregar</title>
-    </head>
+  <title>Agregar</title>
+      </head>
 
     <center>
     <body>
@@ -82,9 +81,9 @@ if($_POST){
               <h6>Cantidad1</h6><input type="text" class="form-control mt-3" name="Cantidad1" >
               <h6>2Cod_medico</h6><input type="text" class="form-control mt-3" name="2Cod_medico" >
               <h6>Cantidad2</h6><input type="text" class="form-control mt-3" name="Cantidad2" >
-              
+
               <button class="btn btn-primary mt-3">Agregar</button>
-              <center><a class="btn btn-outline-success" href="../index.php" >Volver al Datatable</a></center>
+              <center><a class="btn btn-outline-success" href="../recetas.php" >Volver al Datatable</a></center>
             </center>
           </form>
 <?php endif ?>

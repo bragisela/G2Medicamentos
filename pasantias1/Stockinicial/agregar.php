@@ -22,7 +22,7 @@ if($_POST){
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:stockinicial.php');
+    header('location:../stockinicial.php');
   }
   if($_GET){
     $UsID=$_GET['Idstockinicial'];
@@ -56,7 +56,7 @@ if($_POST){
           <h1>Agregar Personas</h1>
           <form method="POST">
 
-              <h6>Ingrese el codigo</h6><input type="date" class="form-control mt-3" name="Codigo">
+              <h6>Ingrese el codigo</h6><input type="number" class="form-control mt-3" name="Codigo">
               <h6>Ingrese el Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" >
               <h6>Ingrese el Stock Inicial</h6><input type="text" class="form-control mt-3" name="Stock_inicial" >
               <button class="btn btn-primary mt-3">Agregar</button>

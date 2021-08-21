@@ -25,6 +25,4 @@ $sentencia_editar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$f
 
 $pdo = null;
 $sentencia_editar = null;
-header("location:recetas.php");
-
-                
+header("location:../recetas.php");

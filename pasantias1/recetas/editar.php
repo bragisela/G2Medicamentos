@@ -29,7 +29,7 @@ if($_POST){
     $cant2 = $_GET['Cantidad2'];
 
     $sql_agregar = 'INSERT INTO recetas (Fecha,Apellido,Nombres,Tipo_DNI,Nro_DNI,Fecha_nacimiento,
-    Sexo,Diagnostico1,Diagnostico2,1Cod_medico,Cantidad1,2Cod_medico,Cantidad2) 
+    Sexo,Diagnostico1,Diagnostico2,1Cod_medico,Cantidad1,2Cod_medico,Cantidad2)
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $sentencia_agregar = $pdo->prepare($sql_agregar);
     $sentencia_agregar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$fecha_naci,
@@ -78,10 +78,10 @@ if($_GET){
 
                         <h5> Ingresar Nombres</h5>
                         <input type="text" class="form-control" name="Nombres" value="<?php echo $resultado_unico['Nombres'] ?>">
-                        
+
                         <h5> Ingresar Tipo_DNI</h5>
                         <input type="text" class="form-control" name="Tipo_DNI" value="<?php echo $resultado_unico['Tipo_DNI'] ?>">
-                        
+
 
                         <h5> Ingresar Nro_DNI</h5>
                         <input type="text" class="form-control" name="Nro_DNI" value="<?php echo $resultado_unico['Nro_DNI'] ?>">
@@ -110,11 +110,11 @@ if($_GET){
                         <h5>Ingresar Cantidad2</h5>
                         <input type="text" class="form-control" name="Cantidad2" value="<?php echo $resultado_unico['Cantidad2'] ?>">
 
-                    
+
                         <input type="hidden" name="Idrecetas" value="<?php echo $resultado_unico['Idrecetas'] ?>">
                         <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="recetas.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="../recetas.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

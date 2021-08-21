@@ -23,7 +23,7 @@ if($_POST){
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:salidas.php');
+    header('location:../salidas.php');
   }
   if($_GET){
     $UsID=$_GET['Idsalidas'];
@@ -62,7 +62,7 @@ if($_POST){
               <h6>Cantidad</h6><input type="text" class="form-control mt-3" name="Cantidad" >
               <h6>Codigo Medicicamento</h6><input type="text" class="form-control mt-3" name="Cod_medico" >
               <button class="btn btn-primary mt-3">Agregar</button>
-              <center><a class="btn btn-outline-success" href="../index.php" >Volver al Datatable</a></center>
+              <center><a class="btn btn-outline-success" href="../salidas.php" >Volver al Datatable</a></center>
             </center>
           </form>
 <?php endif ?>

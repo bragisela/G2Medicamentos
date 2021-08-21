@@ -52,7 +52,7 @@ if($_GET){
                         <input type="hidden" name="Idstockinicial" value="<?php echo $resultado_unico['Idstockinicial'] ?>">
                         <button class="btn btn-outline-primary" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="stockinicial.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="../stockinicial.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

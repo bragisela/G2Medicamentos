@@ -11,4 +11,4 @@ $eliminar->execute(array($UsID));
 
 $agregar=null;
 $pdo=null;
-header('location:clearing.php');
+header('location:../clearing.php');

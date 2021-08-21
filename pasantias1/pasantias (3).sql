@@ -1,106 +1,82 @@
 CREATE DATABASE IF NOT EXISTS pasantias;
 USE pasantias;
 
-
 CREATE TABLE IF NOT EXISTS `clearing` (
+  `Idclearing` int(5) NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
   `Caps` text NOT NULL,
-  `Cod. Medic.` varchar(14) NOT NULL,
-  `Cantidad` int(4) NOT NULL
+  `Cod_medico` varchar(14) NOT NULL,
+  `Cantidad` int(4) NOT NULL,
+  `Admin` int(1) NOT NULL,
+  PRIMARY KEY (Idclearing)
 );
 
---
--- Volcado de datos para la tabla `clearing`
---
-
-INSERT INTO `clearing` (`Fecha`, `Caps`, `Cod. Medic.`, `Cantidad`) VALUES
-('2021-07-13', 'blasd qwd ', 'messi14', 777);
-
 -- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `clsbotiquin`
---
 
 CREATE TABLE IF NOT EXISTS `clsbotiquin` (
+  `Idclsbotiquin` int(5) NOT NULL AUTO_INCREMENT,
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
-  `Stock inicial` int(5) NOT NULL
+  `Stock_inicial` int(5) NOT NULL,
+  PRIMARY KEY (Idclsbotiquin)
 );
-
---
--- Volcado de datos para la tabla `clsbotiquin`
---
-
-INSERT INTO `clsbotiquin` (`Codigo`, `Medicamento`, `Stock inicial`) VALUES
-(123, 'asdasdsad', 123),
-(123, 'asdasd', 123);
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `recetas`
---
-
 CREATE TABLE IF NOT EXISTS `recetas` (
+  `Idrecetas` int(10) NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
   `Apellido` text NOT NULL,
   `Nombres` text NOT NULL,
-  `Tipo DNI` text NOT NULL,
-  `Nro. DNI` int(9) NOT NULL,
-  `Fecha nacimiento` date NOT NULL,
+  `Tipo_DNI` text NOT NULL,
+  `Nro_DNI` int(9) NOT NULL,
+  `Fecha_nacimiento` date NOT NULL,
   `Sexo` text NOT NULL,
-  `Diagnostico 1` char(255) NOT NULL,
-  `Diagnostico 2` char(255) NOT NULL,
-  `1. Cod. Medic.` varchar(15) NOT NULL,
-  `Cantidad 1` int(5) NOT NULL,
-  `2. Cod. Medic.` varchar(15) NOT NULL,
-  `Cantidad 2` int(5) NOT NULL
+  `Diagnostico1` char(255) NOT NULL,
+  `Diagnostico2` char(255) NOT NULL,
+  `1Cod_medico` varchar(15) NOT NULL,
+  `Cantidad1` int(5) NOT NULL,
+  `2Cod_medico` varchar(15) NOT NULL,
+  `Cantidad2` int(5) NOT NULL,
+  PRIMARY KEY (Idrecetas)
 );
-
---
--- Volcado de datos para la tabla `recetas`
---
-
-INSERT INTO `recetas` (`Fecha`, `Apellido`, `Nombres`, `Tipo DNI`, `Nro. DNI`, `Fecha nacimiento`, `Sexo`, `Diagnostico 1`, `Diagnostico 2`, `1. Cod. Medic.`, `Cantidad 1`, `2. Cod. Medic.`, `Cantidad 2`) VALUES
-('2021-07-14', '123', '123', '123', 777, '2021-07-01', '1231231232asdadasd', 'asdasdasd', 'asdasdasd', '12312asdasd', 12345, 'dadad13123', 1234);
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `salidas`
---
+CREATE TABLE IF NOT EXISTS `roles` (
+  `Idrol` int(2) NOT NULL AUTO_INCREMENT,
+  `Nombre` text NOT NULL,
+  PRIMARY KEY (Idrol)
+);
+
+-- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `salidas` (
+  `Idsalidas` int(5) NOT NULL AUTO_INCREMENT,
   `Fecha` date NOT NULL,
-  `Cod. Medic.` varchar(15) NOT NULL,
+  `Cod_medico` varchar(15) NOT NULL,
   `Cantidad` int(5) NOT NULL,
-  `Motivo` char(255) NOT NULL
+  `Motivo` char(255) NOT NULL,
+  PRIMARY KEY (Idsalidas)
 );
-
---
--- Volcado de datos para la tabla `salidas`
---
-
-INSERT INTO `salidas` (`Fecha`, `Cod. Medic.`, `Cantidad`, `Motivo`) VALUES
-('2021-07-31', '12323qwdwq', 123, 'asdadasdasdasd');
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `stockinicial`
---
-
 CREATE TABLE IF NOT EXISTS `stockinicial` (
+  `Idstockinicial` int(5) NOT NULL AUTO_INCREMENT,
   `Codigo` int(5) NOT NULL,
   `Medicamento` char(50) NOT NULL,
-  `Stock inicial` int(5) NOT NULL
+  `Stock_inicial` int(5) NOT NULL,
+  PRIMARY KEY (Idstockinicial)
 );
 
---
--- Volcado de datos para la tabla `stockinicial`
---
+-- --------------------------------------------------------
 
-INSERT INTO `stockinicial` (`Codigo`, `Medicamento`, `Stock inicial`) VALUES
-(12346, 'asdasdasdasadasdasdasdasdasdasdasdasdasdasasasd', 12366);
-COMMIT;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `Idusuario` int(3) NOT NULL AUTO_INCREMENT,
+  `Nombre` text NOT NULL,
+  `Apellido` text NOT NULL,
+  `Idrol` int(2) NOT NULL,
+  `Clave` varchar(255) NOT NULL,
+  PRIMARY KEY (Idusuario)
+);

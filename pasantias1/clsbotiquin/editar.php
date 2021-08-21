@@ -37,15 +37,15 @@ if($_GET){
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
 
-                      <h6>Ingrese el Stock inicial</h6><input type="number" class="form-control mt-3" name="Stock_inicial"  value="<?php echo $resultado_unico['Stock_inicial'] ?>">
+                      <h6>Ingrese el Stock inicial</h6><input type="number" class="form-control mt-3" name="Codigo"  value="<?php echo $resultado_unico['Codigo'] ?>">
                       <h6>Ingrese Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>">
-                      <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Codigo "value="<?php echo $resultado_unico['Codigo'] ?>">
+                      <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Stock_inicial" value="<?php echo $resultado_unico['Stock_inicial'] ?>">
 
 
                         <input type="hidden" name="Idclsbotiquin" value="<?php echo $resultado_unico['Idclsbotiquin'] ?>">
                         <button class="btn btn-outline-primary" type="submit" >Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="clsbotiquin.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="../clsbotiquin.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

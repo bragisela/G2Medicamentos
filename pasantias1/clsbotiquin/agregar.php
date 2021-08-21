@@ -22,7 +22,7 @@ if($_POST){
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:clsbotiquin.php');
+    header('location:../clsbotiquin.php');
   }
   if($_GET){
     $UsID=$_GET['Idclsbotiquin'];
@@ -61,7 +61,7 @@ if($_POST){
               <h6>Ingrese el Codigo</h6><input type="number" class="form-control mt-3" name="Codigo">
 
               <button class="btn btn-primary mt-3">Agregar</button>
-              <center><a class="btn btn-outline-success" href="clsbotiquin.php" >Volver al Datatable</a></center>
+              <center><a class="btn btn-outline-success" href="../clsbotiquin.php" >Volver al Datatable</a></center>
             </center>
           </form>
 <?php endif ?>

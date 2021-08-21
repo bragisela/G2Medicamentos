@@ -14,4 +14,4 @@ $sentencia_editar->execute(array($Cod_Medic,$motivo,$fecha,$cantidad,$id));
 
 $pdo = null;
 $sentencia_editar = null;
-header("location:salidas.php");
+header("location:../salidas.php");

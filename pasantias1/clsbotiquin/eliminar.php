@@ -11,4 +11,4 @@ $eliminar->execute(array($UsID));
 
 $agregar=null;
 $pdo=null;
-header('location:clsbotiquin.php');
+header('location:../clsbotiquin.php');

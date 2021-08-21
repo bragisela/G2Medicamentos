@@ -26,7 +26,7 @@ if($_POST){
 
     $sentencia_agregar = null;
     $pdo = null;
-    header('location:salidas.php');
+    header('location: ../salidas.php');
 }
 
 if($_GET){
@@ -74,9 +74,9 @@ if($_GET){
 
 
                         <input type="hidden" name="Idsalidas" value="<?php echo $resultado_unico['Idsalidas'] ?>">
-                        <button class="btn btn-outline-primary" >Editar</button><br>
+                        <button class="btn btn-outline-primary">Editar</button><br>
                         <br>
-                        <center><a class="btn btn-outline-success" href="salidas.php" >Volver al Datatable</a></center>
+                        <center><a class="btn btn-outline-success" href="../salidas.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>
