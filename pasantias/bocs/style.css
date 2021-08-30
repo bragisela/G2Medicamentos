@@ -6,17 +6,17 @@
      padding: 10px;
 }
 body {
-  color: #869abf;
-background: #a5f0c4;
+  color: #5882cf;
+background: #ffffff;
 font-family: 'Segoe UI', sans-serif;
 font-size: 12px;
 }
 .form-signin {
-    background-color: #cfeaff;
+    background-color: #ffffff;
     display: center;
     width: 35rem;
     padding: 1.0rem;
-    border: 2px solid #00e5ff;
+    border: 2px solid #5882cf;
     box-sizing: border-box;
     border-radius: 16px;
     margin: 0 auto;
@@ -66,7 +66,7 @@ input[type="submit"] {
     display: center;
     width: 35rem;
     padding: 1.5rem;
-    border: 2px solid #00e5ff;
+    border: 2px solid #5882cf;
     box-sizing: border-box;
     border-radius: 16px;
     margin: 0 auto;

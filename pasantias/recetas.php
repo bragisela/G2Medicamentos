@@ -21,42 +21,40 @@ $usuarios=$gsent->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
+    <head>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-6">
-                <div class="card">
-                    <div class="card-body d-flex">
-                        Desea agregar un nuevo medicamento
-                        <a href="recetas/agregar.php" class="btn btn-outline-success btn-lg ml-auto">Agregar</a>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="">
+                            <a href="recetas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- vertical-align: middle -->
+
   </head>
-  <body>
-    <div>
+  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+    <div class="container">
        <div class="row">
-           <div class="">
+           <div class="col-lg-12">
            <div class="table-responsive">
-                <table id="usuarios" class="table table-striped table-bordered " style="width:100%">
+                <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
-                     <th>Fecha</th>
-                <th>Apellido</th>
-                <th>Nombres</th>
-                <th>Tipo DNI</th>
-                <th>Nro. DNI</th>
-                <th>Fecha nacimiento</th>
-                <th>Sexo</th>
-                <th>Diagnostico 1</th>
-                <th>Diagnostico 2</th>
-                <th>1. Cod. Medic.</th>
-                <th>Cantidad 1</th>
-                <th>2. Cod. Medic.</th>
-                <th>Cantidad 2</th>
-                <th>NCap</th>
-                <th>Edicion</th>
+                <th class="table-dark">Fecha</th>
+                <th class="table-dark">Apellido</th>
+                <th class="table-dark">Nombres</th>
+                <th class="table-dark">Tipo DNI</th>
+                <th class="table-dark">Nro. DNI</th>
+                <th class="table-dark">Fecha nacimiento</th>
+                <th class="table-dark">Sexo</th>
+                <th class="table-dark">Diagnostico 1</th>
+                <th class="table-dark">Diagnostico 2</th>
+                <th class="table-dark">1. Cod. Medic.</th>
+                <th class="table-dark">Cantidad 1</th>
+                <th class="table-dark">2. Cod. Medic.</th>
+                <th class="table-dark">Cantidad 2</th>
+                <th class="table-dark">NCap</th>
+                <th class="table-dark">Edicion</th>
                      </thead>
                 <tbody>
                     <?php

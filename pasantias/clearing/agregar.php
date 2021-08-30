@@ -45,32 +45,51 @@ if($_POST){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../bocs/style.css" type="text/css">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
 
 <title>Agregar</title>
     </head>
 
     <center>
-    <body>
-
+    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
+      <br>
         <div class="form-signin">
             <div class="col-md-12">
             <?php if(!$_GET): ?>
           <h1>Agregar Personas</h1>
           <form method="POST">
+          <div class="row g-3">
 
-              <h6>Ingrese el Fecha</h6><input type="date" class="form-control mt-3" name="Fecha">
-              <h6>Ingrese el Caps</h6><input type="text" class="form-control mt-3" name="Caps" >
-              <h6>Ingrese el Codigo Medicicamento</h6><input type="text" class="form-control mt-3" name="Cod_medico" >
-              <h6>Ingrese el Cantidad</h6><input type="text" class="form-control mt-3" name="Cantidad" >
-              <h6>Ingrese el Numero del CAPS</h6><input type="text" class="form-control mt-3" name="Idusuario" >
+          <div class="col-12">
+              <label for="date" class="form-label">Fecha</label>
+              <input type="date" class="form-control bg-light text-dark"  name="Fecha" value="" required>
+            </div>
 
-              <button class="btn btn-primary mt-3">Agregar</button>
-              <center><a class="btn btn-outline-success" href="../clearing.php" >Volver al Datatable</a></center>
-            </center>
+            <div class="col-12">
+              <label for="text" class="form-label">Caps</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Caps" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label for="text" class="form-label">Codigo Medicicamento</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Cod_medico" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label for="text" class="form-label">Cantidad</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Cantidad" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label for="text" class="form-label">Numero de caps</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="" required>
+            </div>
+            <br>
+              <button class="btn btn-primary col-sm-5">Agregar</button>
+              <a class="btn btn-primary col-sm-5" href="../clearing.php" >Volver al Datatable</a></center>
           </form>
 <?php endif ?>
-
+            </div>
             </div>
         </div>
     </body>

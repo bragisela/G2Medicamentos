@@ -42,55 +42,66 @@ if($_POST){
     $resultado_unico = $gsent_unico->fetch();
   }
   ?>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>index</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
+
+<head>
+    <title>Pagina principal</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, 
+		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <link rel="shortcut icon" href="images/icon.png">
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
 <main class="form-signin">
-    <br><br><br><br><center><h2>Login</h2><br>
-    <form action="../pasantias/index.php" method="POST">
-    <div class="form-floating col-sm-6">
-      <input type="text" class="form-control" name="Nombre" placeholder="">
-      <label for="usuario">nombre</label>
-    </div><br>
-    <div class="form-floating col-sm-6">
-      <input type="password" class="form-control" name="Clave" placeholder="">
-      <label for="clave">clave</label>
-    </div><br><br>
-    <div class="col-sm-6">
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesion</button><br><br><br>Si no tienes una cuenta...
-    <a href="registro.php">Registrarse</a></div>
-</main>
-  </body>
+    <h1>Logueo de LOS PIBARDOS BIEN 😎😎</h1>
+    <div class=" w3l-login-form" style="background: #292b2c;">
+        <h2 style="color: white;">Ingrese</h2>
+        <form id="form" action="index.php" method="POST">
+
+            <div class=" w3l-form-group">
+                <label for="usuario">Usuario:</label>
+                <div class="group">
+                    <i class="fas fa-user" style="color: #0275d8;"></i>
+                    <input type="text" class="form-control" placeholder="Usuario" name="Nombre"/>
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                <label for="usuario">Contraseña:</label>
+                <div class="group">
+                    <i class="fas fa-unlock" style="color: #0275d8;"></i>
+                    <input type="password" class="form-control" placeholder="Contraseña" name="Clave"/>
+                </div>
+            </div>
+            <div class="forgot">
+                <p><input type="checkbox">Recuerdame</p>
+            </div>
+            <button type="submit" name="submit" value="login" style="background: #0275d8;">Ingresar</button>
+        </form>
+        <p class=" w3l-register-p">Aun no tiene cuenta?<a href="registro.php" class="register"> Registrarse</a></p>
+    </div>
+    </main>
+    <footer>
+        <p class="copyright-agileinfo"> &copy; 2021. All Rights Reserved <a href=""></a></p>
+    </footer>
+
+</body>
+
 </html>

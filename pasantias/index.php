@@ -65,7 +65,7 @@ if(!$resultado['Nombre']){
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-
+    <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

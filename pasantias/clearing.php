@@ -27,34 +27,31 @@ $usuarios=$gsent->fetchAll();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
 
-</head>
+<head>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-6">
-                <div class="card">
-                    <div class="card-body d-flex">
-                        Desea agregar un nuevo medicamento
-                        <a href="clearing/agregar.php" class="btn btn-outline-success btn-lg ml-auto">Agregar</a>
+            <div class="row">
+                <div class="col-lg">
+                    <div class="">
+                            <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
   </head>
-  <body>
+  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
            <div class="table-responsive">
-                <table id="usuarios" class="table table-striped table-bordered" style="width:100%">
+                <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                      <thead>
-                     <th>Fecha</th>
-                     <th>Caps</th>
-                     <th>Codigo medicamento</th>
-                     <th>Cantidad</th>
-                     <th>NCap</th>
-                     <th>accion</th>
+                     <th class="table-dark">>Fecha</th>
+                     <th class="table-dark">>Caps</th>
+                     <th class="table-dark">>Codigo medicamento</th>
+                     <th class="table-dark">>Cantidad</th>
+                     <th class="table-dark">>NCap</th>
+                     <th class="table-dark">>accion</th>
 
                      </thead>
                 <tbody>
