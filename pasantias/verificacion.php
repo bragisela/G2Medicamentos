@@ -37,6 +37,10 @@ if(!$resultado['Nombre']){
 
   $_SESSION ["idregister"] = $resultado['Idusuario'];
   $idregister = $_SESSION ["idregister"];
-  echo "numero de pito: ";
+  echo "numero de xd: ";
   echo $idregister;echo('<br>');
+
+  $_SESSION ["rolregister"] = $resultado['Idrol'];
+  $rolregister = $_SESSION ["rolregister"];
+
   ?>

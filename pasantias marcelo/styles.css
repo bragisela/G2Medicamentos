@@ -1,0 +1,88 @@
+.btn{
+  margin-right: 8px;
+}
+
+.row{
+  width: rem;
+}
+.card-body{
+     margin: 20px auto;
+     padding: 10px;
+}
+body {
+  color: white;
+background: #ffffff;
+font-family: 'Segoe UI', sans-serif;
+font-size: 12px;
+}
+.form-signin {
+    background-color: #ffffff;
+    display: center;
+    width: 35rem;
+    padding: 1.0rem;
+    border: 2px solid #5882cf;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 0 auto;
+}
+input[type="submit"] {
+    padding: 10px;
+    color: #fff;
+    background: #0098cb;
+    width: 500px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 10;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  input[type="text"] {
+      outline: none;
+      padding: 10px;
+      display: block;
+      width: 400px;
+      border-radius: 2px;
+      border: 1px solid rgba(11, 255, 52, 0.124);
+      margin: 10px auto;
+  }
+
+  input[type="date"] {
+    outline: none;
+    padding: 10px;
+    display: block;
+    width: 400px;
+    border-radius: 2px;
+    border: 1px solid rgba(11, 255, 52, 0.124);
+    margin: 10px auto;
+}
+
+  input[type="submit"]:hover {
+    background-color: #15fcfc;
+
+  }
+  .back{
+    padding: 10px;
+    color: #fff;
+    background: #0098cb;
+    width: 500px;
+    margin: 20px auto;
+    margin-top: 0;
+    border: 10;
+    border-radius: 3px;
+    cursor: pointer;
+}
+  .btn{
+    padding: 10px;
+    margin: 15px auto;
+
+  }
+  .form-signin {
+    background-color: #3d3d3d;
+    display: center;
+    width: 35rem;
+    padding: 1.5rem;
+    border: 2px solid #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 16px;
+    margin: 0 auto;
+  }

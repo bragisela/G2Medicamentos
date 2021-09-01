@@ -10,6 +10,14 @@ $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
 ?>
+
+<?php
+if($idregister==1){
+
+}
+?>
+
+
   <html lang="es">
   <head>
     <meta charset="utf-8">
@@ -60,10 +68,19 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Idusuario']?></td>
 
                     <td>
-                          <center>
-                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
-                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
-                      </a></center>
+                    <center>
+                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
+
+
+                        <?php
+                        if($rolregister==1){
+                        ?> 
+                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
+                      </a>
+                      <?php
+                        }
+                      ?>
+                    </center>
                   </tr>
                     <?php
                         }

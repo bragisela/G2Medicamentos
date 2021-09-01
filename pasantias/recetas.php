@@ -76,10 +76,19 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Cantidad2']?></td>
                     <td><?php echo $usuario['Idusuario']?></td>
                     <td>
-                          <center>
-                        <a href="recetas/editar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>"><img src="https://img.icons8.com/material-outlined/24/000000/edit-file--v2.png"/></a>
-                        <a href="recetas/eliminar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="https://img.icons8.com/material-outlined/24/000000/delete-sign.png"/>
-                      </a></center>
+                    <center>
+                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
+
+
+                        <?php
+                        if($rolregister==1){
+                        ?> 
+                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
+                      </a>
+                      <?php
+                        }
+                      ?>
+                    </center>
                   </tr>
                     <?php
                         }
