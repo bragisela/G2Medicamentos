@@ -66,13 +66,13 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Idusuario']?></td>
                     <td>
                     <center>
-                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
+                        <a style="color: white;" href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
 
 
                         <?php
                         if($rolregister==1){
                         ?> 
-                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
+                        <a style="color: white;" href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
                       </a>
                       <?php
                         }
