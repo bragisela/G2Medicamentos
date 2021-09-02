@@ -16,11 +16,13 @@ if($_POST){
     $caps = $_POST['Caps'];
     $Cod_Medic = $_POST['Cod_medico'];
     $cantidad = $_POST['Cantidad'];
+    $tipo = $_POST['Tipo'];
+    $Otrocaps = $_POST['Otrocaps'];
     $Idusuario = $_POST['Idusuario'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Caps,Cod_medico,Cantidad,Idusuario) VALUES (?,?,?,?,?)';
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Caps,Cod_medico,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$caps,$Cod_Medic,$cantidad,$Idusuario));
+    $agregar->execute(array($fecha,$caps,$Cod_Medic,$cantidad,$tipo,$Otrocaps,$Idusuario));
 
   //cerrar
     $agregar = null;
@@ -78,6 +80,16 @@ if($_POST){
             <div class="col-12">
               <label for="text" class="form-label">Cantidad</label>
               <input type="text" class="form-control bg-light text-dark"  name="Cantidad" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label for="text" class="form-label">Salida/Entrada</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Tipo" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label for="text" class="form-label">Recibido/enviado por...</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Otrocaps" value="" required>
             </div>
 
             <div class="col-12">

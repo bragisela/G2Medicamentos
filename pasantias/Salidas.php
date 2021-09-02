@@ -69,13 +69,13 @@ if($idregister==1){
 
                     <td>
                     <center>
-                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
+                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
 
 
                         <?php
                         if($rolregister==1){
                         ?> 
-                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
+                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
                       <?php
                         }

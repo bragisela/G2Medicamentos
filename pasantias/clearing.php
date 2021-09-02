@@ -45,13 +45,15 @@ $usuarios=$gsent->fetchAll();
            <div class="col-lg-12">
            <div class="table-responsive">
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
-                     <thead>
-                     <th class="table-dark">>Fecha</th>
-                     <th class="table-dark">>Caps</th>
-                     <th class="table-dark">>Codigo medicamento</th>
-                     <th class="table-dark">>Cantidad</th>
-                     <th class="table-dark">>NCap</th>
-                     <th class="table-dark">>accion</th>
+                <thead>
+                     <th class="table-dark">Fecha</th>
+                     <th class="table-dark">Caps</th>
+                     <th class="table-dark">Codigo medicamento</th>
+                     <th class="table-dark">Cantidad</th>
+                     <th class="table-dark">Tipo</th>
+                     <th class="table-dark">Recibido/Enviado</th>
+                     <th class="table-dark">NCap</th>
+                     <th class="table-dark">accion</th>
 
                      </thead>
                 <tbody>
@@ -63,16 +65,18 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Caps']?></td>
                     <td><?php echo $usuario['Cod_medico']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
+                    <td><?php echo $usuario['Tipo']?></td>
+                    <td><?php echo $usuario['Otrocaps']?></td>
                     <td><?php echo $usuario['Idusuario']?></td>
                     <td>
                     <center>
-                        <a style="color: white;" href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img src="imagenes/editar.png"/></a>
+                        <a href="clearing/editar.php?Idclearing=<?php echo $usuario['Idclearing']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
 
 
                         <?php
                         if($rolregister==1){
                         ?> 
-                        <a style="color: white;" href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img src="imagenes/borrar.png"/>
+                        <a href="clearing/eliminar.php?Idclearing=<?php echo $usuario['Idclearing']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
                       <?php
                         }

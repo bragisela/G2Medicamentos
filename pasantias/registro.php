@@ -8,13 +8,36 @@
     <title>Registro</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
+    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- /google fonts-->
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <script src="js/validacion.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -95,53 +118,60 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-<div class="container">
-<main>
-  <br><br><br><br><center><h2 class="titulo">Registro</h2><br>
-      <div class="col-md-7 col-lg-12">
+
+  <h1 style="color: white;">Registrarse</h1>
+  <div class=" w3l-login-form" style="background: #292b2c;" >
+    <h2 style="color: white;">Complete los datos</h2>
+      <div class=" w3l-form-group">
       <?php if(!$_GET): ?>
         <form action="login.php" method="POST">
         <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">nombre</label>
-              <input type="text" class="form-control" name="Nombre" placeholder="" value="" required>
+        <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input type="text" class="form-control bg-light text-dark" name="Nombre" placeholder="Jose" required>
               <div class="invalid-feedback">
                 Valid first name is required.
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <label for="lastName" class="form-label">clave</label>
-              <input type="password" id="pass" class="form-control"  name="Clave" onfocus="" onblur="enviardatos(this)" placeholder="" value="" required>
-              <span id="alerta"></span>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-            <span id="passstrength"></span>
-            <div class="col-12">
-              <label for="email" class="form-label">apellido </label>
-              <input type="text" class="form-control" name="Apellido" value="" required placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
               </div>
             </div>
 
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">idrol</label>
-              <input type="text" class="form-control" name="Idrol" placeholder="" value="" required>
+              <label for="lastName" class="form-label">Clave</label>
+              <input type="password" id="pass" name="Clave" class="form-control bg-light text-dark" onblur="enviardatos(this)" name="nombre" placeholder="Contraseña123" required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
-          <hr class="my-4">
-          </center>
-          <button class="w-100 btn btn-primary btn-lg" type="submit" onClick="enviardatos()">Registrarse</button><br><br>
-          Si ya tienes una cuenta...
-          <a href="login.php">Iniciar sesion</a>
+
+            <div class="col-sm-12">
+              <label for="email" class="form-label">Apellido</label>
+              <input type="text" class="form-control bg-light text-dark" name="Apellido" placeholder="Martinez" required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <label for="firstName" class="form-label">Idrol</label>
+              <select type="text" class="form-select" aria-label="form-control bg-light text-dark" name="Idrol" value="" required>
+              <option value="2">Caps</option>
+              <option value="1">Admin</option>
+              </select>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+          
+          <button class=" w3l-register" type="submit" id="submit" style="background: #0275d8;">Registrarse</button>
+
         </form>
         <?php endif ?>
       </div>
     </div>
+    </div>
+    <br>
   </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

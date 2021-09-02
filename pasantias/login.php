@@ -91,7 +91,7 @@ if($_POST){
                 </div>
             </div>
             <div class="forgot">
-                <p><input type="checkbox">Recuerdame</p>
+                
             </div>
             <button type="submit" name="submit" value="login" style="background: #0275d8;">Ingresar</button>
         </form>
