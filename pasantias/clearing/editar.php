@@ -91,7 +91,7 @@ if($_GET){
                     </div>
 
                         <input type="hidden" name="Idclearing" value="<?php echo $resultado_unico['Idclearing'] ?>">
-                        <button class="btn btn-primary col-sm-5">Agregar</button>
+                        <button class="btn btn-primary col-sm-5">Editar</button>
                         <a class="btn btn-primary col-sm-5" href="../clearing.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>

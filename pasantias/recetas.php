@@ -37,7 +37,7 @@ $usuarios=$gsent->fetchAll();
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
-           <div class="table-responsive">
+           <div class="table-responsive-lg">
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
                 <th class="table-dark">Fecha</th>
@@ -77,13 +77,13 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Idusuario']?></td>
                     <td>
                     <center>
-                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
+                        <a href="recetas/editar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
 
 
                         <?php
                         if($rolregister==1){
                         ?> 
-                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
+                        <a href="recetas/eliminar.php?Idrecetass=<?php echo $usuario['Idrecetas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
                       <?php
                         }

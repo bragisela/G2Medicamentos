@@ -83,9 +83,15 @@ if($_POST){
             </div>
 
             <div class="col-12">
-              <label for="text" class="form-label">Salida/Entrada</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Tipo" value="" required>
-            </div>
+                    <label for="Tipo" class="form-label">Salida/Entrada</label>
+                        <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Tipo" value="" required>
+                            <option value="Entrada">Entrada</option>
+                            <option value="Salida">Salida</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
 
             <div class="col-12">
               <label for="text" class="form-label">Recibido/enviado por...</label>

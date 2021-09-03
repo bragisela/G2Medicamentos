@@ -21,31 +21,44 @@ if($_GET){
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
 
-
-<Center>
-    <title>Editar</title>
+<title>Editar</title>
     </head>
-    <body>
-    <link rel="stylesheet" href="../bocs/style.css" type="text/css">
+
+    <center>
+    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
         <div class="form-signin">
             <div class="col-md-12">
                 <?php if($_GET): ?>
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
+                    <div class="row g-3">
 
-                      <h6>Ingrese el codigo</h6><input type="number" class="form-control mt-3" name="Codigo"  value="<?php echo $resultado_unico['Codigo'] ?>">
-                      <h6>Ingrese Medicamento</h6><input type="text" class="form-control mt-3" name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>">
-                      <h6>Ingrese el stock inicial</h6><input type="number" class="form-control mt-3" name="Stock_inicial" value="<?php echo $resultado_unico['Stock_inicial'] ?>">
+                    <div class="col-12">
+                        <label for="text" class="form-label">Codigo</label>
+                        <input type="text" class="form-control bg-light text-dark"  name="Codigo" value="<?php echo $resultado_unico['Codigo'] ?>" required>
+                    </div>
 
+                    <div class="col-12">
+                        <label for="text" class="form-label">Medicamento</label>
+                        <input type="text" class="form-control bg-light text-dark"  name="Medicamento" value="<?php echo $resultado_unico['Medicamento'] ?>" required>
+                    </div>
 
+                    <div class="col-12">
+                        <label for="text" class="form-label">stock inicial</label>
+                        <input type="text" class="form-control bg-light text-dark"  name="Stock_inicial" value="<?php echo $resultado_unico['Stock_inicial'] ?>" required>
+                    </div>
+                     
                         <input type="hidden" name="Idclsbotiquin" value="<?php echo $resultado_unico['Idclsbotiquin'] ?>">
-                        <button class="btn btn-outline-primary" type="submit" >Editar</button><br>
-                        <br>
-                        <center><a class="btn btn-outline-success" href="../clsbotiquin.php" >Volver al Datatable</a></center>
+                        <button class="btn btn-primary col-sm-5">Editar</button>
+                        <a class="btn btn-primary col-sm-5" href="../clsbotiquin.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>

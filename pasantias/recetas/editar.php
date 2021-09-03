@@ -55,70 +55,100 @@ if($_GET){
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
 
-
-<Center>
-    <title>Editar</title>
+<title>Editar</title>
     </head>
-    <body>
-    <link rel="stylesheet" href="../bocs/style.css" type="text/css">
+
+    <center>
+    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
         <div class="form-signin">
             <div class="col-md-12">
                 <?php if($_GET): ?>
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
+                    <div class="row g-3">
                         <h5>Ingresar fecha</h5>
-                        <input type="text" class="form-control" name="Fecha"  value="<?php echo $resultado_unico['Fecha'] ?>">
 
+                        <div class="col-12">
+                            <label for="date" class="form-label">Fecha</label>
+                            <input type="date" class="form-control bg-light text-dark"  name="Fecha" value="<?php echo $resultado_unico['Fecha'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Apellido</h5>
-                        <input type="text" class="form-control" name="Apellido" value="<?php echo $resultado_unico['Apellido'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Apellido</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Apellido" value="<?php echo $resultado_unico['Apellido'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Nombres</h5>
-                        <input type="text" class="form-control" name="Nombres" value="<?php echo $resultado_unico['Nombres'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Nombres</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Nombres" value="<?php echo $resultado_unico['Nombres'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Tipo_DNI</h5>
-                        <input type="text" class="form-control" name="Tipo_DNI" value="<?php echo $resultado_unico['Tipo_DNI'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Tipo DNI</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Tipo_DNI" value="<?php echo $resultado_unico['Tipo_DNI'] ?>" required>
+                        </div>
 
+                        <div class="col-12">
+                            <label for="text" class="form-label">Nro. DNI</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Nro_DNI" value="<?php echo $resultado_unico['Nro_DNI'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Nro_DNI</h5>
-                        <input type="text" class="form-control" name="Nro_DNI" value="<?php echo $resultado_unico['Nro_DNI'] ?>">
+                        <div class="col-12">
+                            <label for="date" class="form-label">Fecha de nacimiento</label>
+                            <input type="date" class="form-control bg-light text-dark"  name="Fecha_nacimiento" value="<?php echo $resultado_unico['Fecha_nacimiento'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Fecha_nacimiento</h5>
-                        <input type="text" class="form-control" name="Fecha_nacimiento" value="<?php echo $resultado_unico['Fecha_nacimiento'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Sexo</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Sexo" value="<?php echo $resultado_unico['Sexo'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Sexo</h5>
-                        <input type="text" class="form-control" name="Sexo" value="<?php echo $resultado_unico['Sexo'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Diagnostico 1</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Diagnostico1" value="<?php echo $resultado_unico['Diagnostico1'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Diagnostico1</h5>
-                        <input type="text" class="form-control" name="Diagnostico1" value="<?php echo $resultado_unico['Diagnostico1'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Diagnostico 2</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Diagnostico2" value="<?php echo $resultado_unico['Diagnostico2'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Diagnostico2</h5>
-                        <input type="text" class="form-control" name="Diagnostico2" value="<?php echo $resultado_unico['Diagnostico2'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Codigo medico</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="1Cod_medico" value="<?php echo $resultado_unico['1Cod_medico'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar 1Cod_medico</h5>
-                        <input type="text" class="form-control" name="1Cod_medico" value="<?php echo $resultado_unico['1Cod_medico'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Cantidad 1</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Cantidad1" value="<?php echo $resultado_unico['Cantidad1'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar Cantidad1</h5>
-                        <input type="text" class="form-control" name="Cantidad1" value="<?php echo $resultado_unico['Cantidad1'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Codigo medico 2</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="2Cod_medico" value="<?php echo $resultado_unico['2Cod_medico'] ?>" required>
+                        </div>
 
-                        <h5> Ingresar 2Cod_medico</h5>
-                        <input type="text" class="form-control" name="2Cod_medico" value="<?php echo $resultado_unico['2Cod_medico'] ?>">
+                        <div class="col-12">
+                            <label for="text" class="form-label">Cantidad 2</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Cantidad2" value="<?php echo $resultado_unico['Cantidad2'] ?>" required>
+                        </div>
 
-                        <h5>Ingresar Cantidad2</h5>
-                        <input type="text" class="form-control" name="Cantidad2" value="<?php echo $resultado_unico['Cantidad2'] ?>">
-
-                        <h5>Ingresar Numero Caps</h5>
-                        <input type="text" class="form-control" name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>">
-
+                        <div class="col-12">
+                            <label for="text" class="form-label">Id usuario</label>
+                            <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>" required>
+                        </div>
 
                         <input type="hidden" name="Idrecetas" value="<?php echo $resultado_unico['Idrecetas'] ?>">
-                        <button class="btn btn-outline-primary" >Editar</button><br>
-                        <br>
-                        <center><a class="btn btn-outline-success" href="../recetas.php" >Volver al Datatable</a></center>
+                        <button class="btn btn-primary col-sm-5">Editar</button>
+                        <a class="btn btn-primary col-sm-5" href="../recetas.php" >Volver al Datatable</a></center>
                     </form>
                 <?php endif ?>
             </div>
