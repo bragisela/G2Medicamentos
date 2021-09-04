@@ -50,7 +50,7 @@ if($_POST){
     <!-- meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, 
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates,
 		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
     />
     <link rel="shortcut icon" href="images/icon.png">
@@ -71,16 +71,16 @@ if($_POST){
 <body>
 
 <main class="form-signin">
-    <h1>Logueo de LOS PIBARDOS BIEN 😎😎</h1>
+    <h1>Iniciar Sesion</h1>
     <div class=" w3l-login-form" style="background: #292b2c;">
-        <h2 style="color: white;">Ingrese</h2>
+        <h2 style="color: white;">Ingrese sus datos</h2>
         <form id="form" action="index.php" method="POST">
 
             <div class=" w3l-form-group">
-                <label for="usuario">Usuario:</label>
+                <label for="usuario">Nombre del Caps/Usuario Admin:</label>
                 <div class="group">
                     <i class="fas fa-user" style="color: #0275d8;"></i>
-                    <input type="text" class="form-control" placeholder="Usuario" name="Nombre"/>
+                    <input type="text" class="form-control" placeholder="Nombre del Caps/Usuario Admin:" name="Nombre"/>
                 </div>
             </div>
             <div class=" w3l-form-group">
@@ -91,7 +91,7 @@ if($_POST){
                 </div>
             </div>
             <div class="forgot">
-                
+
             </div>
             <button type="submit" name="submit" value="login" style="background: #0275d8;">Ingresar</button>
         </form>
