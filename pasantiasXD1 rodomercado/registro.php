@@ -124,7 +124,7 @@
     <h2 style="color: white;">Complete los datos</h2>
       <div class=" w3l-form-group">
       <?php if(!$_GET): ?>
-        <form action="login.php" method="POST">
+        <form action="index.php" method="POST">
         <div class="row g-3">
         <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>

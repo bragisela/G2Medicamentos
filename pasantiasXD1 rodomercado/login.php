@@ -95,7 +95,7 @@ if($_POST){
             </div>
             <button type="submit" name="submit" value="login" style="background: #0275d8;">Ingresar</button>
         </form>
-        <p class=" w3l-register-p">Aun no tiene cuenta?<a href="registro.php" class="register"> Registrarse</a></p>
+        
     </div>
     </main>
     <footer>

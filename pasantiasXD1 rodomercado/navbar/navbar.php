@@ -26,6 +26,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="logout.php" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="far fa-user"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a style="color: black;" class="dropdown-item" href="registro.php"><i class="fab fa-accessible-icon"></i> Registrar Caps</a></li>
+                        <li><hr class="dropdown-divider" /></li>
                         <li><a style="color: red;" class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a></li>
                     </ul>
                 </li>
