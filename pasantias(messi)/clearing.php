@@ -92,30 +92,13 @@ $usuarios=$gsent->fetchAll();
            </div>
        </div>
     </div>
-    
-    
-    <script>
-$(document).ready(function() {
-     $("#usuarios").DataTable({
-          "createdRow":function(row,data,index){
-              if (data[3] =="entrada"){
-
-                $("td",row).css({
-                  'background-color':'green'
-                });
-              }
-            } 
-          });
-        });
-      </script>
-
-
-
+       
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="Datatables/js.js"></script>
     <!-- datatables -->
     <script src="DataTables/datatables.min.js"></script>
     <!-- Botones -->
