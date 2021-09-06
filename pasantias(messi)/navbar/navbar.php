@@ -1,26 +1,29 @@
+<link href="styles.css" rel="stylesheet" />
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
 <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Inicio</a>
+    <a class="navbar-brand" href="index.php">Inventario</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+    <li class="nav-item">
+    <a class="nav-link active" id="sas" aria-current="page" href="stockinicial.php">Stock Inicial</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link active" id="sas" aria-current="page" href="clsbotiquin.php">ClsBotiquin</a>
+    </li>
     <li class="nav-item active">
-    <a class="nav-link active" aria-current="page" href="clearing.php">Clearing</a>
+    <a class="nav-link active" id="sas" aria-current="page" href="clearing.php">Clearing</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="clsbotiquin.php">ClsBotiquin</a>
+    <a class="nav-link active" id="sas" aria-current="page" href="salidas.php">Salidas</a>
     </li>
     <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="salidas.php">Salidas</a>
+    <a class="nav-link active" id="sas" aria-current="page" href="recetas.php">Recetas</a>
     </li>
-    <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="recetas.php">Recetas</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="stockinicial.php">StockInicial</a>
-    </li>
+    
   </ul>
   <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">

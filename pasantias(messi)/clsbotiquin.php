@@ -3,13 +3,20 @@
 include_once 'php/conexion.php';
 include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
+
 // llamado a la tabla
-$sql_leer="SELECT * FROM clearing where Idusuario=$idregister";
+if($rolregister==1){
+  $sql_leer="SELECT * FROM clsbotiquin where Idusuario=$eleccionRegister";
+  }else{
+  $sql_leer="SELECT * FROM clsbotiquin where Idusuario=$idregister";
+  }
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
 ?>
-  <html lang="es">
+<!doctype html>
+<html lang="es">
+  <head>
   <head>
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,32 +33,29 @@ $usuarios=$gsent->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
-
-<head>
-    <div class="container">
-            <div class="row">
-                <div class="col-lg">
-                    <div class="">
-                            <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+    <head>
+        <div class="container">
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="">
+                                    <a href="clsbotiquin/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
   </head>
+  <body>
   <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
            <div class="table-responsive">
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
-                <thead>
-                     <th class="table-dark">Fecha</th>
-                     <th class="table-dark">Caps</th>
-                     <th class="table-dark">Codigo medicamento</th>
-                     <th class="table-dark">Cantidad</th>
-                     <th class="table-dark">Tipo</th>
-                     <th class="table-dark">Recibido/Enviado</th>
+                     <thead>
+                     <th class="table-dark">Codigo</th>
+                     <th class="table-dark">Medicamento</th>
+                     <th class="table-dark">Cantidad recibida</th>
                      <th class="table-dark">accion</th>
 
                      </thead>
@@ -60,23 +64,18 @@ $usuarios=$gsent->fetchAll();
                         foreach($usuarios as $usuario){
                     ?>
                     <tr>
-                    <td><?php echo $usuario['Fecha']?></td>
-                    <td><?php echo $usuario['Caps']?></td>
-                    <td><?php echo $usuario['Cod_medico']?></td>
-                    <td><?php echo $usuario['Cantidad']?></td>
-                    <td><?php echo $usuario['Tipo']?></td>
-                    <td><?php echo $usuario['Otrocaps']?></td>
+                    <td><?php echo $usuario['Codigo']?></td>
+                    <td><?php echo $usuario['Medicamento']?></td>
+                    <td><?php echo $usuario['Stock_inicial']?></td>
 
                     <td>
                     <center>
-                        <a href="clearing/editar.php?Idclearing=<?php echo $usuario['Idclearing']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
-
-
+                    <a href="clsbotiquin/editar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
                         <?php
                         if($rolregister==1){
                         ?> 
-                        <a href="clearing/eliminar.php?Idclearing=<?php echo $usuario['Idclearing']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
-                      </a>
+                        <a href="clsbotiquin/eliminar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
+                        </a>
                       <?php
                         }
                       ?>
@@ -92,6 +91,7 @@ $usuarios=$gsent->fetchAll();
     </div>
 
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
@@ -105,11 +105,5 @@ $usuarios=$gsent->fetchAll();
     <script src="DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script src="DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
     <script src="DataTables/Butons-1.7.1/js/buttons.html5.min.js"></script>
-
-
-
-
-
-
   </body>
 </html>

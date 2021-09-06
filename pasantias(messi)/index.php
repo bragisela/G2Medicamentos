@@ -16,8 +16,6 @@ $_SESSION ["claveRegister"] = $_POST["Clave"];
 
 $_SESSION ["eleccionRegister"] = 0;
 $eleccionRegister = $_SESSION ['eleccionRegister'];
-
-
 }
 
 $nombreRegister = $_SESSION ['nombreRegister'];

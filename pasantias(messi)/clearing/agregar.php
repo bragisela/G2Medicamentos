@@ -7,8 +7,13 @@ $sql_leer = 'SELECT * FROM clearing';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
-
 $resultado = $gsent->fetchAll();
+
+
+
+
+
+
 
 //Agregar
 if($_POST){
@@ -16,19 +21,58 @@ if($_POST){
     $caps = $_POST['Caps'];
     $Cod_Medic = $_POST['Cod_medico'];
     $cantidad = $_POST['Cantidad'];
-    $tipo = $_POST['Tipo'];
+    $tipo = 'salida';
+    $tipe = 'entrada';
     $Otrocaps = $_POST['Otrocaps'];
     $Idusuario = $_POST['Idusuario'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Caps,Cod_medico,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?,?)';
-    $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$caps,$Cod_Medic,$cantidad,$tipo,$Otrocaps,$idregister));
+    $direccionregister="messi";
 
+    $sql ="SELECT Nombre,Clave FROM usuarios where Idusuario=$Otrocaps";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($direccionregister));
+    $resultado=$sentencia->fetch();
+
+    $_SESSION ["direccionregister"] = $resultado['Nombre'];
+    $direccionregister = $_SESSION ["direccionregister"];
+
+
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Cod_medico,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$Cod_Medic,$cantidad,$tipo,$direccionregister,$eleccionRegister));
+    }else{
+      $agregar->execute(array($fecha,$Cod_Medic,$cantidad,$tipo,$direccionregister,$idregister));
+    }
+
+    $sas="messi";
+
+    $sql ="SELECT Nombre,Clave FROM usuarios where Idusuario=$idregister";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($sas));
+    $resultado=$sentencia->fetch();
+
+    $_SESSION ["sas"] = $resultado['Nombre'];
+    $sas = $_SESSION ["sas"];
+
+
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Cod_medico,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$Cod_Medic,$cantidad,$tipe,$sas,$Otrocaps));
+    }else{
+      $agregar->execute(array($fecha,$Cod_Medic,$cantidad,$tipe,$sas,$Otrocaps));
+    }
+    
+    
   //cerrar
     $agregar = null;
     $pdo = null;
     header('location:../clearing.php');
   }
+
+
+  
   if($_GET){
     $UsID=$_GET['Idclearing'];
     $sql_unico='SELECT * FROM clearing WHERE Idclearing=?';
@@ -67,10 +111,6 @@ if($_POST){
               <input type="date" class="form-control bg-light text-dark"  name="Fecha" value="" required>
             </div>
 
-            <div class="col-12">
-              <label for="text" class="form-label">Caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Caps" value="" required>
-            </div>
 
             <div class="col-12">
               <label for="text" class="form-label">Codigo Medicicamento</label>
@@ -83,25 +123,10 @@ if($_POST){
             </div>
 
             <div class="col-12">
-                    <label for="Tipo" class="form-label">Salida/Entrada</label>
-                        <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Tipo" value="" required>
-                            <option value="Entrada">Entrada</option>
-                            <option value="Salida">Salida</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
-                    </div>
-
-            <div class="col-12">
-              <label for="text" class="form-label">Recibido/enviado por...</label>
+              <label for="text" class="form-label">enviar a</label>
               <input type="text" class="form-control bg-light text-dark"  name="Otrocaps" value="" required>
             </div>
 
-            <div class="col-12">
-              <label for="text" class="form-label">Numero de caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="" required>
-            </div>
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
               <a class="btn btn-primary col-sm-5" href="../clearing.php" >Volver al Datatable</a></center>

@@ -2,7 +2,7 @@
 
 include_once '../php/conexion.php';
 include_once '../verificacion.php';
-$sql_leer = 'SELECT * FROM stockinicial';
+$sql_leer = 'SELECT * FROM clsbotiquin';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
@@ -11,23 +11,25 @@ $resultado = $gsent->fetchAll();
 
 //Agregar
 if($_POST){
-    $Codigo = $_POST['Codigo'];
-    $Medicamento = $_POST['Medicamento'];
-    $Stockinicial= $_POST['Stock_inicial'];
+    $codigo = $_POST['Codigo'];
+    $medicamento = $_POST['Medicamento'];
+    $stockinicial = $_POST['Stock_inicial'];
 
-
-    $sql_agregar = 'INSERT INTO stockinicial (Codigo,Medicamento,Stock_inicial,Idusuario) VALUES (?,?,?,?)';
+    $sql_agregar = 'INSERT INTO clsbotiquin (Codigo,Medicamento,Stock_inicial,Idusuario) VALUES (?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial,$idregister));
-
+    if($rolregister==1){
+    $agregar->execute(array($codigo,$medicamento,$stockinicial,$eleccionRegister));
+    }else{
+    $agregar->execute(array($codigo,$medicamento,$stockinicial,$idregister));
+    }
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:../stockinicial.php');
+    header('location:../clsbotiquin.php');
   }
   if($_GET){
-    $UsID=$_GET['Idstockinicial'];
-    $sql_unico='SELECT * FROM stockinicial WHERE Idstockinicial=?';
+    $UsID=$_GET['Idclsbotiquin'];
+    $sql_unico='SELECT * FROM clearing WHERE Idclsbotiquin=?';
     $gsent_unico=$pdo->prepare($sql_unico);
     $gsent_unico->execute(array($UsID));
     $resultado_unico=$gsent_unico->fetch();
@@ -37,7 +39,7 @@ if($_POST){
 <!doctype html>
 <html lang="en">
   <head>
-
+    .
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,22 +61,25 @@ if($_POST){
           <div class="row g-3">
 
           <div class="col-12">
-              <label for="text" class="form-label">Ingrese el codigo</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Codigo" value="" required>
+              <label for="text" class="form-label">Codigo</label>
+              <input type="number" class="form-control bg-light text-dark"  name="Codigo" value="" required>
             </div>
+
             <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Medicamento</label>
+              <label for="text" class="form-label">Medicamento</label>
               <input type="text" class="form-control bg-light text-dark"  name="Medicamento" value="" required>
             </div>
+
             <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Stock Inicial</label>
+              <label for="text" class="form-label">Stock inicial</label>
               <input type="text" class="form-control bg-light text-dark"  name="Stock_inicial" value="" required>
             </div>
 
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
-              <a class="btn btn-primary col-sm-5" href="../stockinicial.php" >Volver al Datatable</a></center>
+              <a class="btn btn-primary col-sm-5" href="../clsbotiquin.php" >Volver al Datatable</a></center>
           </form>
+          <br>
 <?php endif ?>
             </div>
             </div>

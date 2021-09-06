@@ -19,8 +19,11 @@ if($_POST){
 
     $sql_agregar = 'INSERT INTO salidas (Fecha,Motivo,Cantidad,Cod_medico,Idusuario) VALUES (?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$motivo,$cantidad,$Cod_Medic,$eleccionRegister));
+    }else{
     $agregar->execute(array($fecha,$motivo,$cantidad,$Cod_Medic,$idregister));
-
+    }
   //cerrar
     $agregar = null;
     $pdo = null;
