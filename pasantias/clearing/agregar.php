@@ -7,28 +7,189 @@ $sql_leer = 'SELECT * FROM clearing';
 
 $gsent = $pdo->prepare($sql_leer);
 $gsent->execute();
-
 $resultado = $gsent->fetchAll();
+
+
+
+
+
+
 
 //Agregar
 if($_POST){
     $fecha = $_POST['Fecha'];
     $caps = $_POST['Caps'];
-    $Cod_Medic = $_POST['Cod_medico'];
+    $codigo = $_POST['Cod_medico'];
     $cantidad = $_POST['Cantidad'];
-    $tipo = $_POST['Tipo'];
+    $tipo = 'salida';
+    $tipe = 'entrada';
     $Otrocaps = $_POST['Otrocaps'];
     $Idusuario = $_POST['Idusuario'];
 
-    $sql_agregar = 'INSERT INTO clearing (Fecha,Caps,Cod_medico,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?,?)';
-    $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$caps,$Cod_Medic,$cantidad,$tipo,$Otrocaps,$Idusuario));
+    $direccionregister=0;
 
+    $sql ="SELECT Nombre,Clave FROM usuarios where Idusuario=$Otrocaps";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($direccionregister));
+    $resultado=$sentencia->fetch();
+
+    $_SESSION ["direccionregister"] = $resultado['Nombre'];
+    $direccionregister = $_SESSION ["direccionregister"];
+
+    $cant1=0;
+    if($rolregister==1){
+    $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionRegister";
+    }else{
+    $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+    }
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cant1));
+    $resultado=$sentencia->fetch();
+    $cant1 = $resultado['cantidad'];
+    $total1 = $cant1 - $cantidad;
+
+    if($total1<0){
+
+    echo '<script language="javascript">alert("no hay stock");window.location.href="../clearing.php"</script>';
+    die();
+
+    }else{
+
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Codigo,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$codigo,$cantidad,$tipo,$direccionregister,$eleccionRegister));
+    }else{
+      $agregar->execute(array($fecha,$codigo,$cantidad,$tipo,$direccionregister,$idregister));
+    }
+
+    $sas="messi";
+
+    $sql ="SELECT Nombre,Clave FROM usuarios where Idusuario=$idregister";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($sas));
+    $resultado=$sentencia->fetch();
+
+    $_SESSION ["sas"] = $resultado['Nombre'];
+    $sas = $_SESSION ["sas"];
+
+
+    $sql_agregar = 'INSERT INTO clearing (Fecha,Codigo,Cantidad,Tipo,Otrocaps,Idusuario) VALUES (?,?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$codigo,$cantidad,$tipe,$sas,$Otrocaps));
+    }else{
+      $agregar->execute(array($fecha,$codigo,$cantidad,$tipe,$sas,$Otrocaps));
+    }
+    
+     /* ----------------------------------------------------------------------------------- */
+
+     $cod=0;
+     if($rolregister==1){
+     $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister";
+     }else{
+     $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+     }
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cod));
+     $resultado=$sentencia->fetch();
+     $cod = $resultado['Codigo'];
+     echo $cod;
+     echo"<br>";
+
+     $cant=0;
+     $total=0;
+     if($rolregister==1){
+     $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister";
+     }else{
+     $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+     }
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cant));
+     $resultado=$sentencia->fetch();
+     $cant = $resultado['cantidad'];
+     $total = $cant - $cantidad;
+     echo $total;
+     echo"<br>";
+
+     $cantsalidas=0;
+     if($rolregister==1){
+     $sql ="SELECT salidasclearing,Medicamento FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister";
+     }else{
+     $sql ="SELECT salidasclearing,Medicamento FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+     }
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cantsalidas));
+     $resultado=$sentencia->fetch();
+     $cantsalidas = $resultado['salidasclearing'];
+     $totalsalidas = $cantsalidas + $cantidad;
+     echo $totalsalidas;
+     echo"<br>";
+     $medicamento = $resultado['Medicamento'];
+ 
+     if($cod==$codigo)
+     {
+       if($rolregister==1){
+       $sql = "UPDATE medicamentos set cantidad=?,salidasclearing=? where Codigo=$cod and Idusuario=$eleccionregister";
+       }else{
+       $sql = "UPDATE medicamentos set cantidad=?,salidasclearing=? where Codigo=$cod and Idusuario=$idregister";
+       }
+       $sentencia_editar = $pdo->prepare($sql);
+       $sentencia_editar->execute(array($total,$totalsalidas));
+       }
+ 
+     /* ----------------------------------------------------------------------------------- */
+ 
+     $cod=0;
+     $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$Otrocaps";
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cod));
+     $resultado=$sentencia->fetch();
+     $cod = $resultado['Codigo'];
+ 
+     $cant=0;
+     $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$Otrocaps";
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cant));
+     $resultado=$sentencia->fetch();
+     $cant = $resultado['cantidad'];
+     $total = $cant + $cantidad;
+     
+     $cantrecibidas=0;
+     $sql ="SELECT recibidasclearing FROM medicamentos where Codigo=$codigo and Idusuario=$Otrocaps";
+     $sentencia= $pdo->prepare($sql);
+     $sentencia->execute(array($cantrecibidas));
+     $resultado=$sentencia->fetch();
+     $cantrecibidas = $resultado['recibidasclearing'];
+     $totalrecibidas = $cantrecibidas + $cantidad;
+ 
+ 
+     if($cod==$codigo)
+     {
+      echo"<br>";
+      echo"saaaaaaas";
+     $sql = "UPDATE medicamentos set cantidad=?,recibidasclearing=? where Codigo=$cod and Idusuario=$Otrocaps";
+     $sentencia_editar = $pdo->prepare($sql);
+     $sentencia_editar->execute(array($total,$totalrecibidas));
+     }else{
+      echo"<br>";
+      echo"soooooooooooos";
+     $sql_agregar = 'INSERT INTO medicamentos (Codigo,Medicamento,cantidad,recibidasclearing,Idusuario) VALUES (?,?,?,?,?)';
+     $agregar = $pdo->prepare($sql_agregar);
+     $agregar->execute(array($codigo,$medicamento,$cantidad,$cantidad,$Otrocaps));
+     }
+
+     
+     /* ----------------------------------------------------------------------------------- */
+    
   //cerrar
     $agregar = null;
     $pdo = null;
-    header('location:../clearing.php');
+    /* header('location:../clearing.php'); */
+
   }
+
+  
   if($_GET){
     $UsID=$_GET['Idclearing'];
     $sql_unico='SELECT * FROM clearing WHERE Idclearing=?';
@@ -36,6 +197,8 @@ if($_POST){
     $gsent_unico->execute(array($UsID));
     $resultado_unico=$gsent_unico->fetch();
   }
+
+}
   ?>
 
 <!doctype html>
@@ -67,10 +230,6 @@ if($_POST){
               <input type="date" class="form-control bg-light text-dark"  name="Fecha" value="" required>
             </div>
 
-            <div class="col-12">
-              <label for="text" class="form-label">Caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Caps" value="" required>
-            </div>
 
             <div class="col-12">
               <label for="text" class="form-label">Codigo Medicicamento</label>
@@ -83,25 +242,10 @@ if($_POST){
             </div>
 
             <div class="col-12">
-                    <label for="Tipo" class="form-label">Salida/Entrada</label>
-                        <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Tipo" value="" required>
-                            <option value="Entrada">Entrada</option>
-                            <option value="Salida">Salida</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
-                    </div>
-
-            <div class="col-12">
-              <label for="text" class="form-label">Recibido/enviado por...</label>
+              <label for="text" class="form-label">enviar a</label>
               <input type="text" class="form-control bg-light text-dark"  name="Otrocaps" value="" required>
             </div>
 
-            <div class="col-12">
-              <label for="text" class="form-label">Numero de caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="" required>
-            </div>
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
               <a class="btn btn-primary col-sm-5" href="../clearing.php" >Volver al Datatable</a></center>

@@ -4,11 +4,18 @@ include_once 'php/conexion.php';
 include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
 // llamado a la tabla
+
+if($rolregister==1){
+$sql_leer="SELECT * FROM stockinicial where Idusuario=$eleccionRegister";
+}else{
 $sql_leer="SELECT * FROM stockinicial where Idusuario=$idregister";
+}
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
+
 ?>
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -25,9 +32,7 @@ $usuarios=$gsent->fetchAll();
     <div class="container">
             <div class="row">
                 <div class="col-lg">
-                    <div class="">
-                            <a href="Stockinicial/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -38,12 +43,15 @@ $usuarios=$gsent->fetchAll();
        <div class="row">
            <div class="col-lg-12">
            <div class="table-responsive">
+           <div class="">
+                            <a href="Stockinicial/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                    </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                      <thead>
                      <th class="table-dark">Codigo</th>
                      <th class="table-dark">Medicamento</th>
                      <th class="table-dark">Stock inicial</th>
-                     <th class="table-dark">NCap</th>
+
                      <th class="table-dark">accion</th>
                      </thead>
                 <tbody>
@@ -54,7 +62,7 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Codigo']?></td>
                     <td><?php echo $usuario['Medicamento']?></td>
                     <td><?php echo $usuario['Stock_inicial']?></td>
-                    <td><?php echo $usuario['Idusuario']?></td>
+
                       <td>
                       <center>
                         <a href="Stockinicial/editar.php?Idstockinicial=<?php echo $usuario['Idstockinicial']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>

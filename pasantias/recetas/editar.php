@@ -30,11 +30,11 @@ if($_POST){
     $cant2 = $_GET['Cantidad2'];
 
     $sql_agregar = 'INSERT INTO recetas (Fecha,Apellido,Nombres,Tipo_DNI,Nro_DNI,Fecha_nacimiento,
-    Sexo,Diagnostico1,Diagnostico2,1Cod_medico,Cantidad1,2Cod_medico,Cantidad2,Idusuario)
+    Sexo,Diagnostico1,Diagnostico2,1Cod_medico,Cantidad1,2Cod_medico,Cantidad2)
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $sentencia_agregar = $pdo->prepare($sql_agregar);
     $sentencia_agregar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$fecha_naci,
-        $sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2,$Idusuario,$id));
+        $sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2,$id));
 
 
     $sentencia_agregar = null;
@@ -74,7 +74,6 @@ if($_GET){
                     <h2>EDITAR USUARIOS</h2>
                     <form method="GET" action="editarf.php">
                     <div class="row g-3">
-                        <h5>Ingresar fecha</h5>
 
                         <div class="col-12">
                             <label for="date" class="form-label">Fecha</label>
@@ -139,11 +138,6 @@ if($_GET){
                         <div class="col-12">
                             <label for="text" class="form-label">Cantidad 2</label>
                             <input type="text" class="form-control bg-light text-dark"  name="Cantidad2" value="<?php echo $resultado_unico['Cantidad2'] ?>" required>
-                        </div>
-
-                        <div class="col-12">
-                            <label for="text" class="form-label">Id usuario</label>
-                            <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>" required>
                         </div>
 
                         <input type="hidden" name="Idrecetas" value="<?php echo $resultado_unico['Idrecetas'] ?>">

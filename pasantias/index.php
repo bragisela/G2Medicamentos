@@ -13,10 +13,15 @@ $usuarios=$gsent->fetchAll();
 if($_POST){
 $_SESSION ["nombreRegister"] = $_POST["Nombre"];
 $_SESSION ["claveRegister"] = $_POST["Clave"];
+
+$_SESSION ["eleccionRegister"] = 0;
+$eleccionRegister = $_SESSION ['eleccionRegister'];
 }
 
 $nombreRegister = $_SESSION ['nombreRegister'];
 $claveRegister = $_SESSION ['claveRegister'];
+
+
 
 
 //verificacion
@@ -39,16 +44,36 @@ if(!$resultado['Nombre']){
   echo $claveRegister;echo('<br>');
   echo "Clave Hash: ";
   echo $resultado['Clave'];echo('<br>');
-  echo "numero de messi: ";
+  echo "numero de rol: ";
   echo $resultado['Idrol'];echo('<br>');
-  echo "numero de sas: ";
-  echo $resultado['Idusuario'];echo('<br>');
+/*   echo "numero de sas: ";
+  echo $resultado['Idusuario'];echo('<br>'); */
   }else{
       header("Location:login.php");
   }
 
+  $_SESSION ["rolregister"] = $resultado['Idrol'];
+  $rolregister = $_SESSION ["rolregister"];
+
   $_SESSION ["idregister"] = $resultado['Idusuario'];
   $idregister = $_SESSION ["idregister"];
+
+  $eleccionRegister = $_SESSION ['eleccionRegister'];
+  echo "numero de registro admin: ";
+  echo $eleccionRegister;echo('<br>');
+
+$sql_leer="SELECT * FROM medicamentos where Idusuario=$idregister";
+$gsent=$pdo->prepare($sql_leer);
+$gsent->execute();
+$usuarios=$gsent->fetchAll();
+
+if(($rolregister==1) && ($eleccionRegister==0)){
+    header("Location:index1.php");
+}
+
+
+
+
 ?>
 
 
@@ -64,13 +89,48 @@ if(!$resultado['Nombre']){
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    </head>
+   <!--  </head><h1>Resumen mensual</h1> -->
     <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
 
-
+                    <div class="container">
+       <div class="row">
+           <div class="col-lg-12">
+           <div class="table-responsive">
+                <table id="usuarios" class="table table-hover table-dark" style="width:100%">
+                     <thead>
+                     <th class="table-dark">Codigo</th>
+                     <th class="table-dark">Medicamento</th>
+                     <th class="table-dark">Stock Actual (Fisico)</th>
+                     <th class="table-dark">Entradas(ClsBotiquin)</th>
+                     <th class="table-dark">Recibidas(Clearing)</th>
+                     <th class="table-dark">Salidas(Clearing)</th>
+                     <th class="table-dark">Otras Salidas</th>
+                     </thead>
+                 <tbody>
+                    <?php
+                        foreach($usuarios as $usuario){
+                    ?>
+                    <tr>
+                    <td><?php echo $usuario['Codigo']?></td>
+                    <td><?php echo $usuario['Medicamento']?></td>
+                    <td><?php echo $usuario['cantidad']?></td>
+                    <td><?php echo $usuario['clsbotiquin']?></td>
+                    <td><?php echo $usuario['recibidasclearing']?></td>
+                    <td><?php echo $usuario['salidasclearing']?></td>
+                    <td><?php echo $usuario['salidas']?></td>
+                    <?php
+                        }
+                    ?>
+                    </tr>
+                    
+                 </tbody>
+                </table>
+           </div>
+       </div>
+    </div>
                             </div>
                         </div>
                     </div>

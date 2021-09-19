@@ -58,12 +58,8 @@ if($_GET){
                             <input type="text" class="form-control bg-light text-dark"  name="Stock_inicial" value="<?php echo $resultado_unico['Stock_inicial'] ?>" required>
                         </div>
 
-                        <div class="col-12">
-                            <label for="text" class="form-label">Ingresar Ncaps</label>
-                            <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>" required>
-                        </div>
 
-                                               <input type="hidden" name="Idstockinicial" value="<?php echo $resultado_unico['Idstockinicial'] ?>">
+                        <input type="hidden" name="Idstockinicial" value="<?php echo $resultado_unico['Idstockinicial'] ?>">
                         <button class="btn btn-primary col-sm-5">Editar</button>
                         <a class="btn btn-primary col-sm-5" href="../stockinicial.php" >Volver al Datatable</a></center>
                     </form>

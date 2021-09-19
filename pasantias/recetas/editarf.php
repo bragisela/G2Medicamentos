@@ -19,10 +19,10 @@ $Idusuario = $_GET['Idusuario'];
 $id =$_GET['Idrecetas'];
 
 $sql_editar = 'UPDATE recetas SET  Fecha=?,Apellido=?,Nombres=?,Tipo_DNI=?,Nro_DNI=?,Fecha_nacimiento=?,
-    Sexo=?,Diagnostico1=?,Diagnostico2=?,1Cod_medico=?,Cantidad1=?,2Cod_medico=?,Cantidad2=?,Idusuario=? WHERE Idrecetas=?';
+    Sexo=?,Diagnostico1=?,Diagnostico2=?,1Cod_medico=?,Cantidad1=?,2Cod_medico=?,Cantidad2=? WHERE Idrecetas=?';
 $sentencia_editar = $pdo->prepare($sql_editar);
 $sentencia_editar->execute(array($fecha,$apellido,$nombres,$tipo_dni,$nro_dni,$fecha_naci,
-    $sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2,$Idusuario,$id));
+    $sexo,$diagnostico1,$diagnostico2,$cod_medico1,$cant1,$cod_medico2,$cant2,$id));
 
 $pdo = null;
 $sentencia_editar = null;

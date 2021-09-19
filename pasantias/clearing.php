@@ -4,7 +4,22 @@ include_once 'php/conexion.php';
 include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
 // llamado a la tabla
-$sql_leer="SELECT * FROM clearing where Idusuario=$idregister";
+
+$cant=0;
+$sql ="SELECT cantidad FROM medicamentos where Codigo=1 and Idusuario=$idregister";
+$sentencia= $pdo->prepare($sql);
+$sentencia->execute(array($cant));
+$resultado=$sentencia->fetch();
+$cant = $resultado['cantidad'];
+$total = $cant;
+echo $total;
+
+
+if($rolregister==1){
+  $sql_leer="SELECT * FROM clearing where Idusuario=$eleccionRegister";
+  }else{
+  $sql_leer="SELECT * FROM clearing where Idusuario=$idregister";
+  }
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
@@ -47,12 +62,10 @@ $usuarios=$gsent->fetchAll();
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
                      <th class="table-dark">Fecha</th>
-                     <th class="table-dark">Caps</th>
                      <th class="table-dark">Codigo medicamento</th>
                      <th class="table-dark">Cantidad</th>
                      <th class="table-dark">Tipo</th>
                      <th class="table-dark">Recibido/Enviado</th>
-                     <th class="table-dark">NCap</th>
                      <th class="table-dark">accion</th>
 
                      </thead>
@@ -62,25 +75,20 @@ $usuarios=$gsent->fetchAll();
                     ?>
                     <tr>
                     <td><?php echo $usuario['Fecha']?></td>
-                    <td><?php echo $usuario['Caps']?></td>
-                    <td><?php echo $usuario['Cod_medico']?></td>
+                    <td><?php echo $usuario['Codigo']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
                     <td><?php echo $usuario['Tipo']?></td>
                     <td><?php echo $usuario['Otrocaps']?></td>
-                    <td><?php echo $usuario['Idusuario']?></td>
+
                     <td>
                     <center>
                         <a href="clearing/editar.php?Idclearing=<?php echo $usuario['Idclearing']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
 
 
-                        <?php
-                        if($rolregister==1){
-                        ?> 
+                        
                         <a href="clearing/eliminar.php?Idclearing=<?php echo $usuario['Idclearing']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
-                      <?php
-                        }
-                      ?>
+                      
                     </center>
                   </tr>
                     <?php
@@ -92,12 +100,27 @@ $usuarios=$gsent->fetchAll();
        </div>
     </div>
 
+    <script>
+$(document).ready(function() {
+    var tabla=$('#usuarios').DataTable( {
+        createdRow:function(row,data,index){
+            if (data[3] == "entrada"){
 
+              $("td",row).css({
+                'background-color':'green'
+              });
+            }
+          },
+        });
+      });
+      </script>
+       
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
-    <script src="Datatables/js.js"></script>
+
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
     <!-- datatables -->
     <script src="DataTables/datatables.min.js"></script>
     <!-- Botones -->

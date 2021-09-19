@@ -35,7 +35,7 @@ if($_GET){
     </head>
 
     <center>
-    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
+    <body class="sb-nav-fixed" style="background-color:F7F7F7;">
         <div class="form-signin">
             <div class="col-md-12">
                 <?php if($_GET): ?>
@@ -75,16 +75,10 @@ if($_GET){
                     </div>
 
                     <div class="col-12">
-                    <label for="Otrocaps" class="form-label">Recibido/enviado</label>
-                        <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Otrocaps" value="<?php echo $resultado_unico['Otrocaps'] ?>" required>
-                            <option value="Recibido">Recibido</option>
-                            <option value="Enviado">Enviado</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
+                        <label for="text" class="form-label">Recibido/enviado</label>
+                        <input type="text" class="form-control bg-light text-dark"  name="Otrocaps" value="<?php echo $resultado_unico['Otrocaps'] ?>" required>
                     </div>
-                    
+                 
                     <div class="col-12">
                         <label for="text" class="form-label">Ingresar Codigo Del CAPS</label>
                         <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>" required>

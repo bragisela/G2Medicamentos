@@ -1,126 +1,70 @@
 <?php
 include_once 'php/conexion.php';
-
-
-$sql_leer='SELECT * FROM registro';
-$gsent=$pdo->prepare($sql_leer);
-$gsent->execute();
-$usuarios=$gsent->fetchAll();
-
-
+include_once 'verificacion.php';
 if($_POST){
-    $nombre =  $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $usuario = $_POST['usuario'];
-    $clave =  $_POST['clave'];
-    $email =  $_POST['email'];
-    $localidad =  $_POST['localidad'];
-    $estado =  $_POST['estado'];
-  
-    $clave=password_hash($clave, PASSWORD_DEFAULT);
+$_SESSION ["eleccionRegister"] = $_POST["eleccion"];
+$eleccionRegister = $_SESSION ['eleccionRegister'];
+header("Location:index.php");
+}
 
-    $sql_agregar = 'INSERT INTO registro (nombre,apellido,usuario,clave,email,localidad,estado) VALUES (?,?,?,?,?,?,?)';
-    $sentencia_agregar = $pdo->prepare($sql_agregar);
-    $sentencia_agregar->execute(array($nombre,$apellido,$usuario,$clave,$email,$localidad,$estado));
-  
-    $sentencia_agregar = null;
-    $pdo = null;
-  
-    header('location:index.php');
 
-  
-  }
 
-  if($_GET){
-    $id_usuario = $_GET['id_usuario'];
-    $sql_unico = 'SELECT * FROM registro WHERE id_usuario=?';
-    $gsent_unico = $pdo->prepare($sql_unico);
-    $gsent_unico->execute(array($id_usuario));
-    $resultado_unico = $gsent_unico->fetch();
-  }
-  ?>
 
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>Signin Template · Bootstrap v5.0</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+<head>
+    <title>Pagina principal</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, 
+		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <link rel="shortcut icon" href="images/icon.png">
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
+</head>
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
+<body style="background-image: url('images/cover4.jpg');">
     
 <main class="form-signin">
   
-    <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="">Seleccionar Caps</h1>
+    <div class=" w3l-login-form" style="background: #292b2c;">
+        <h2 style="color: white;">Ingrese el nombre del Caps</h2>
+    <form action="index1.php" method="POST">
 
-    
-    <form action="login1.php" method="POST">
-    <div class="form-floating">
-      <input type="text" class="form-control" name="usuario" placeholder="">
-      <label for="usuario">usuario</label>
+    <div class=" w3l-form-group">
+                <label for="usuario">Caps:</label>
+                <div class="group">
+                    <i class="fas fa-user" style="color: #0275d8;"></i>
+                    <input type="text" class="form-control" placeholder="Nombre del Caps" name="eleccion"/>
+                </div>
+                <br>
+                <br>
+                <button type="submit" name="submit" style="background: #0275d8;">Ingresar</button>
+        </form>
+       
     </div>
+    </main>
+    <footer>
+        <p class="copyright-agileinfo"> &copy; 2021. All Rights Reserved <a href=""></a></p>
+    </footer>
 
-    <div class="form-floating">
-      <input type="password" class="form-control" name="clave" placeholder="">
-      <label for="clave">clave</label>
-    </div>
+</body>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">iniciar sesion</button>
-    </form>
-  
-    <a href="registro.php"><button class="w-100 btn btn-lg btn-primary" type="submit" >registrarse</button></a>
-
-
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-  </form>
-</main>
-
-
-    
-  </body>
 </html>

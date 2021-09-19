@@ -14,12 +14,15 @@ if($_POST){
     $Codigo = $_POST['Codigo'];
     $Medicamento = $_POST['Medicamento'];
     $Stockinicial= $_POST['Stock_inicial'];
-    $Idusuario = $_POST['Idusuario'];
+
 
     $sql_agregar = 'INSERT INTO stockinicial (Codigo,Medicamento,Stock_inicial,Idusuario) VALUES (?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial,$Idusuario));
-
+    if($rolregister==1){
+    $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial,$eleccionRegister));
+    }else{
+    $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial,$idregister));
+    }
   //cerrar
     $agregar = null;
     $pdo = null;
@@ -54,7 +57,7 @@ if($_POST){
         <div class="form-signin">
             <div class="col-md-12">
             <?php if(!$_GET): ?>
-          <h1>Agregar Personas</h1>
+          <h1>agregar</h1>
           <form method="POST">
           <div class="row g-3">
 
@@ -70,10 +73,7 @@ if($_POST){
               <label for="text" class="form-label">Ingrese el Stock Inicial</label>
               <input type="text" class="form-control bg-light text-dark"  name="Stock_inicial" value="" required>
             </div>
-            <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Numero del caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="" required>
-            </div>
+
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
               <a class="btn btn-primary col-sm-5" href="../stockinicial.php" >Volver al Datatable</a></center>

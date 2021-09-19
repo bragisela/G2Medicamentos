@@ -5,10 +5,16 @@ include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
 
 // llamado a la tabla
-$sql_leer="SELECT * FROM clsbotiquin where Idusuario=$idregister";
+if($rolregister==1){
+  $sql_leer="SELECT * FROM clsbotiquin where Idusuario=$eleccionRegister";
+  }else{
+  $sql_leer="SELECT * FROM clsbotiquin where Idusuario=$idregister";
+  }
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
+
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -33,9 +39,7 @@ $usuarios=$gsent->fetchAll();
         <div class="container">
                     <div class="row">
                         <div class="col-lg">
-                            <div class="">
-                                    <a href="clsbotiquin/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -47,11 +51,14 @@ $usuarios=$gsent->fetchAll();
        <div class="row">
            <div class="col-lg-12">
            <div class="table-responsive">
+           <div class="">
+                            <a href="clsbotiquin/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                    </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                      <thead>
                      <th class="table-dark">Codigo</th>
                      <th class="table-dark">Medicamento</th>
-                     <th class="table-dark">Stock inicial</th>
+                     <th class="table-dark">Cantidad recibida</th>
                      <th class="table-dark">accion</th>
 
                      </thead>
@@ -66,14 +73,12 @@ $usuarios=$gsent->fetchAll();
 
                     <td>
                     <center>
-                        <a href="clsbotiquin/editar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
-
-
+                    <a href="clsbotiquin/editar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
                         <?php
                         if($rolregister==1){
                         ?> 
                         <a href="clsbotiquin/eliminar.php?Idclsbotiquin=<?php echo $usuario['Idclsbotiquin']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
-                      </a>
+                        </a>
                       <?php
                         }
                       ?>

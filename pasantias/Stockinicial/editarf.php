@@ -8,9 +8,9 @@ $stockinicial = $_GET['Stock_inicial'];
 $Idusuario = $_GET['Idusuario'];
 $id = $_GET['Idstockinicial'];
 
-$sql_editar = 'UPDATE stockinicial SET  Codigo=?,Medicamento=?,Stock_inicial=?,Idusuario=? WHERE Idstockinicial=?';
+$sql_editar = 'UPDATE stockinicial SET  Codigo=?,Medicamento=?,Stock_inicial=? WHERE Idstockinicial=?';
 $sentencia_editar = $pdo->prepare($sql_editar);
-$sentencia_editar->execute(array($codigo,$medicamento,$stockinicial,$Idusuario,$id));
+$sentencia_editar->execute(array($codigo,$medicamento,$stockinicial,$id));
 
 $pdo = null;
 $sentencia_editar = null;

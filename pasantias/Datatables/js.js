@@ -1,5 +1,13 @@
 $(document).ready(function() {
     $('#usuarios').DataTable( {
+        createdRow:function(row,data,index){
+            if (data[3] =="entrada"){
+
+              $("td",row).css({
+                'background-color':'green'
+              });
+            }
+          }, 
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",

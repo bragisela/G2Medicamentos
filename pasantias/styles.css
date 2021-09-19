@@ -55,15 +55,6 @@ input[type="submit"] {
     border: 1px solid rgba(11, 255, 52, 0.124);
     margin: 10px auto;
 }
-  select[name="Otrocaps"] {
-      outline: none;
-      padding: 10px;
-      display: block;
-      width: 400px;
-      border-radius: 2px;
-      border: 1px solid rgba(11, 255, 52, 0.124);
-      margin: 10px auto;
-}
 
   input[type="submit"]:hover {
     background-color: #15fcfc;
@@ -95,7 +86,7 @@ input[type="submit"] {
     border-radius: 16px;
     margin: 0 auto;
   }
-  
+
   #sas:hover{
     color: #e6e6e6;
     text-shadow: 1px 1px 10px #e6e6e6;

@@ -5,7 +5,11 @@ include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
 
 // llamado a la tabla
-$sql_leer="SELECT * FROM salidas where Idusuario=$idregister";
+if($rolregister==1){
+  $sql_leer="SELECT * FROM salidas where Idusuario=$eleccionRegister";
+  }else{
+  $sql_leer="SELECT * FROM salidas where Idusuario=$idregister";
+  }
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
@@ -33,9 +37,7 @@ if($idregister==1){
     <div class="container">
             <div class="row">
                 <div class="col-lg">
-                    <div class="">
-                            <a href="salidas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -46,15 +48,18 @@ if($idregister==1){
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
-           <div class="table-responsive">
+           <div class="table-responsive">}
+           <div class="">
+                            <a href="salidas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                    </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
                      <th class="table-dark">Fecha</th>
                      <th class="table-dark">Cod_medico</th>
                      <th class="table-dark">Cantidad</th>
                      <th class="table-dark">Motivo</th>
-                     <th class="table-dark">Ncap</th>
-                     <th class="table-dark">Edicion</th>
+
+                     <th class="table-dark">accion</th>
                      </thead>
                 <tbody>
                     <?php
@@ -65,7 +70,7 @@ if($idregister==1){
                     <td><?php echo $usuario['Cod_medico']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
                     <td><?php echo $usuario['Motivo']?></td>
-                    <td><?php echo $usuario['Idusuario']?></td>
+
 
                     <td>
                     <center>

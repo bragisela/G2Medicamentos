@@ -15,9 +15,51 @@ if($_POST){
     $medicamento = $_POST['Medicamento'];
     $stockinicial = $_POST['Stock_inicial'];
 
-    $sql_agregar = 'INSERT INTO clsbotiquin (Codigo,Medicamento,Stock_inicial) VALUES (?,?,?)';
+    $sql_agregar = "INSERT INTO clsbotiquin (Medicamento,Stock_inicial,Idusuario,Codigo) VALUES (?,?,?,?)";
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($codigo,$medicamento,$stockinicial));
+    if($rolregister==1){
+    $agregar->execute(array($medicamento,$stockinicial,$eleccionRegister,$codigo));
+    }else{
+    $agregar->execute(array($medicamento,$stockinicial,$idregister,$codigo));
+    }
+
+    $cod=0;
+    $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cod));
+    $resultado=$sentencia->fetch();
+    $cod = $resultado['Codigo'];
+
+    $cant=0;
+    $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cant));
+    $resultado=$sentencia->fetch();
+    $cant = $resultado['cantidad'];
+    $total = $cant + $stockinicial;
+    
+    $cantbotiquin=0;
+    $sql ="SELECT clsbotiquin FROM medicamentos where Codigo=$codigo and Idusuario=$idregister";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cant));
+    $resultado=$sentencia->fetch();
+    $cantbotiquin = $resultado['clsbotiquin'];
+    $totalbotiquin = $cantbotiquin + $stockinicial;
+
+
+    if($cod==$codigo)
+    {
+    $sql = "UPDATE medicamentos set cantidad=?,clsbotiquin=? where Codigo=$cod and Idusuario=$idregister";
+    $sentencia_editar = $pdo->prepare($sql);
+    $sentencia_editar->execute(array($total,$totalbotiquin));
+    }else{
+    $sql_agregar = 'INSERT INTO medicamentos (Codigo,Medicamento,cantidad,clsbotiquin,Idusuario) VALUES (?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    $agregar->execute(array($codigo,$medicamento,$stockinicial,$stockinicial,$idregister));
+    }
+
+
+
 
   //cerrar
     $agregar = null;
@@ -58,8 +100,8 @@ if($_POST){
           <div class="row g-3">
 
           <div class="col-12">
-              <label for="date" class="form-label">Codigo</label>
-              <input type="date" class="form-control bg-light text-dark"  name="Codigo" value="" required>
+              <label for="text" class="form-label">Codigo</label>
+              <input type="number" class="form-control bg-light text-dark"  name="Codigo" value="" required>
             </div>
 
             <div class="col-12">

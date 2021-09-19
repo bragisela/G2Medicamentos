@@ -5,7 +5,11 @@ include_once 'navbar/navbar.php';
 include_once 'verificacion.php';
 
 // llamado a la tabla
-$sql_leer="SELECT * FROM recetas where Idusuario=$idregister";
+if($rolregister==1){
+  $sql_leer="SELECT * FROM recetas where Idusuario=$eleccionRegister";
+  }else{
+  $sql_leer="SELECT * FROM recetas where Idusuario=$idregister";
+  }
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
 $usuarios=$gsent->fetchAll();
@@ -25,9 +29,7 @@ $usuarios=$gsent->fetchAll();
     <div class="container">
             <div class="row">
                 <div class="col-lg">
-                    <div class="">
-                            <a href="recetas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -37,7 +39,10 @@ $usuarios=$gsent->fetchAll();
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
-           <div class="table-responsive-lg">
+           <div class="table-responsive">
+           <div class="">
+                            <a href="recetas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                    </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
                 <th class="table-dark">Fecha</th>
@@ -53,7 +58,7 @@ $usuarios=$gsent->fetchAll();
                 <th class="table-dark">Cantidad 1</th>
                 <th class="table-dark">2. Cod. Medic.</th>
                 <th class="table-dark">Cantidad 2</th>
-                <th class="table-dark">NCap</th>
+
                 <th class="table-dark">Edicion</th>
                      </thead>
                 <tbody>
@@ -74,7 +79,7 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Cantidad1']?></td>
                     <td><?php echo $usuario['2Cod_medico']?></td>
                     <td><?php echo $usuario['Cantidad2']?></td>
-                    <td><?php echo $usuario['Idusuario']?></td>
+
                     <td>
                     <center>
                         <a href="recetas/editar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
@@ -96,8 +101,7 @@ $usuarios=$gsent->fetchAll();
                 </tbody>
             </table>
            </div>
-       </div>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>

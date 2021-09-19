@@ -19,8 +19,11 @@ if($_POST){
 
     $sql_agregar = 'INSERT INTO salidas (Fecha,Motivo,Cantidad,Cod_medico,Idusuario) VALUES (?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($fecha,$motivo,$cantidad,$Cod_Medic,$Idusuario));
-
+    if($rolregister==1){
+    $agregar->execute(array($fecha,$motivo,$cantidad,$Cod_Medic,$eleccionRegister));
+    }else{
+    $agregar->execute(array($fecha,$motivo,$cantidad,$Cod_Medic,$idregister));
+    }
   //cerrar
     $agregar = null;
     $pdo = null;
@@ -65,8 +68,8 @@ if($_POST){
             </div>
 
             <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Motivo</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Motivo" value="" required>
+              <label for="text" class="form-label">Ingrese el Codigo Medicicamento</label>
+              <input type="text" class="form-control bg-light text-dark"  name="Cod_medico" value="" required>
             </div>
 
             <div class="col-12">
@@ -74,15 +77,18 @@ if($_POST){
               <input type="text" class="form-control bg-light text-dark"  name="Cantidad" value="" required>
             </div>
 
+            
             <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Codigo Medicicamento</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Cod_medico" value="" required>
+              <label for="Otrocaps" class="form-label">Motivo</label>
+              <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Motivo" value="<?php echo $resultado_unico['Motivo'] ?>" required>
+                  <option value="Salidas no apta">Salidas no apta</option>
+                  <option value="Otras salidas">Otras salidas</option>
+              </select>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
             </div>
 
-            <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Numero del caps</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Idusuario" value="" required>
-            </div>
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
               <a class="btn btn-primary col-sm-5" href="../salidas.php" >Volver al Datatable</a></center>

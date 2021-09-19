@@ -2,7 +2,7 @@
 session_start();
 $nombreRegister = $_SESSION ['nombreRegister'];
 $claveRegister = $_SESSION ['claveRegister'];
-
+$eleccionRegister = $_SESSION ['eleccionRegister'];
 
 
 
@@ -27,20 +27,36 @@ if(!$resultado['Nombre']){
   echo $claveRegister;echo('<br>');
   echo "Clave Hash: ";
   echo $resultado['Clave'];echo('<br>');
-  echo "numero de messi: ";
+  echo "numero de rol: ";
   echo $resultado['Idrol'];echo('<br>');
-  echo "numero de sas: ";
-  echo $resultado['Idusuario'];echo('<br>');
+/*   echo "numero registro sin variable: ";
+  echo $resultado['Idusuario'];echo('<br>'); */
   }else{
       header("Location:login.php");
   }
 
   $_SESSION ["idregister"] = $resultado['Idusuario'];
   $idregister = $_SESSION ["idregister"];
-  echo "numero de xd: ";
+  echo "id de registro: ";
   echo $idregister;echo('<br>');
+
+  $eleccionRegister = $_SESSION ['eleccionRegister'];
+  echo "numero de registro por parte del admin: ";
+  echo $eleccionRegister;echo('<br>');
 
   $_SESSION ["rolregister"] = $resultado['Idrol'];
   $rolregister = $_SESSION ["rolregister"];
+  
+  $eleccionmes = $_SESSION ['eleccionmes'];
+  echo "mes seleccionado: ";
+  echo $eleccionmes;echo('<br>');
+
+  
+  $_SESSION ["mes"] = date("F");
+  $mes = $_SESSION ['mes'];
+  echo "mes actual: ";
+  echo $mes;echo('<br>');
+
+
 
   ?>

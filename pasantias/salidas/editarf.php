@@ -9,9 +9,9 @@ $cantidad = $_GET['Cantidad'];
 $Idusuario = $_GET['Idusuario'];
 $id =$_GET['Idsalidas'];
 
-$sql_editar = 'UPDATE salidas SET  Cod_medico=?,motivo=?,Fecha=?,Cantidad=?,Idusuario=? WHERE Idsalidas=?';
+$sql_editar = 'UPDATE salidas SET  Cod_medico=?,motivo=?,Fecha=?,Cantidad=? WHERE Idsalidas=?';
 $sentencia_editar = $pdo->prepare($sql_editar);
-$sentencia_editar->execute(array($Cod_Medic,$motivo,$fecha,$cantidad,$Idusuario,$id));
+$sentencia_editar->execute(array($Cod_Medic,$motivo,$fecha,$cantidad,$id));
 
 $pdo = null;
 $sentencia_editar = null;

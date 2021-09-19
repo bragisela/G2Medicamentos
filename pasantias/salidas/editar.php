@@ -69,26 +69,27 @@ if($_GET){
                         </div>
 
                         <div class="col-12">
+                            <label for="text" class="form-label">Codigo Del Medicamento</label>
+                            <input type="text" class="form-control bg-light text-dark" name="Cod_medico"  value="<?php echo $resultado_unico['Cod_medico'] ?>" required>
+                        </div>
+
+                        <div class="col-12">
                             <label for="text" class="form-label">Cantidad</label>
                             <input type="text" class="form-control bg-light text-dark" name="Cantidad"  value="<?php echo $resultado_unico['Cantidad'] ?>" required>
                         </div>
 
                         <div class="col-12">
-                            <label for="text" class="form-label">Motivo</label>
-                            <input type="text" class="form-control bg-light text-dark" name="Motivo"  value="<?php echo $resultado_unico['Motivo'] ?>" required>
+                            <label for="Otrocaps" class="form-label">Motivo</label>
+                            <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="Motivo" value="<?php echo $resultado_unico['Motivo'] ?>" required>
+                                <option value="Salidas no apta">Salidas no apta</option>
+                                <option value="Otras salidas">Otras salidas</option>
+                            </select>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
                         </div>
+                    </div>
 
-                        <div class="col-12">
-                            <label for="text" class="form-label">Codigo Del Medicamento</label>
-                            <input type="text" class="form-control bg-light text-dark" name="Cod_medico"  value="<?php echo $resultado_unico['Cod_medico'] ?>" required>
-                        </div>
-
-                       <div class="col-12">
-                            <label for="text" class="form-label">Codigo Del Medicamento</label>
-                            <input type="text" class="form-control bg-light text-dark" name="Idusuario"  value="<?php echo $resultado_unico['Idusuario'] ?>" required>
-                        </div>
-                       
-                        <input type="hidden" name="Idsalidas" value="<?php echo $resultado_unico['Idsalidas'] ?>">
+                    <input type="hidden" name="Idsalidas" value="<?php echo $resultado_unico['Idsalidas'] ?>">
                         <button class="btn btn-primary col-sm-5">Editar</button>
                         <a class="btn btn-primary col-sm-5" href="../salidas.php" >Volver al Datatable</a></center>
                     </form>

@@ -142,13 +142,6 @@
               </div>
             </div>
 
-            <div class="col-sm-12">
-              <label for="email" class="form-label">Apellido</label>
-              <input type="text" class="form-control bg-light text-dark" name="Apellido" placeholder="Martinez" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
 
             <div class="col-sm-12">
               <label for="firstName" class="form-label">Idrol</label>
