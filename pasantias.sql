@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `clearing`
 --
+CREATE DATABASE pasantias;
+USE pasantias;
 
 CREATE TABLE `clearing` (
   `Idclearing` int(5) NOT NULL,
