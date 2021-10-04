@@ -1,10 +1,10 @@
 $(document).ready(function() {
   var tabla = $('#usuarios').DataTable( {
       createdRow:function(row,data,index){
-          if (data[3] =="Inactivo"){
+          if (data[4] =="Inactivo"){
 
             $("td",row).css({
-              'background-color':'green'
+              'background-color':'red'
             });
           }
         },

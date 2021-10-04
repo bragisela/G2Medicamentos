@@ -43,7 +43,13 @@ $usuarios=$gsent->fetchAll();
            <div class="col-lg-12">
            <div class="table-responsive">
            <div class="">
+           <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                             <a href="salidas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            <?php
+                        }
+                      ?>
                     </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
@@ -51,8 +57,14 @@ $usuarios=$gsent->fetchAll();
                      <th class="table-dark">codigo del medicamento</th>
                      <th class="table-dark">Cantidad</th>
                      <th class="table-dark">Motivo</th>
-
+                     <th class="table-dark">estado</th>
+                     <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                      <th class="table-dark">accion</th>
+                     <?php
+                        }
+                      ?>
                      </thead>
                 <tbody>
                     <?php
@@ -63,17 +75,25 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Codigo']?></td>
                     <td><?php echo $usuario['Cantidad']?></td>
                     <td><?php echo $usuario['Motivo']?></td>
+                    <td><?php
+                    
+                    
+                    $estado=$usuario['estado'];
+                    if ($estado==0){
+                      $estado="Activo";
 
+                    }else{
+                      $estado="Inactivo"; 
+                    }
+                    echo $estado?></td>
 
+                      <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                     <td>
                     <center>
-                        <a href="salidas/editar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
-
-
-                        <?php
-                        if($rolregister==1){
-                        ?> 
-                        <a href="salidas/eliminar.php?Idsalidas=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
+                      
+                        <a href="salidas/eliminar.php?datos=<?php echo $usuario['Idsalidas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
                       <?php
                         }
@@ -93,7 +113,7 @@ $usuarios=$gsent->fetchAll();
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
-    <script src="Datatables/js.js"></script>
+    <script src="Datatables/salidas.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->
     <script src="DataTables/datatables.min.js"></script>

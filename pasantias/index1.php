@@ -58,7 +58,7 @@ header("Location:index.php");
                 <br>
                 <button type="submit" name="submit" style="background: #0275d8;">Ingresar</button>
         </form>
-       
+        <p class=" w3l-register-p"><a href="registro.php" class="register"> Registrar Caps</a></p>
     </div>
     </main>
     <footer>

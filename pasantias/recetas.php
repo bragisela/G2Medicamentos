@@ -41,7 +41,13 @@ $usuarios=$gsent->fetchAll();
            <div class="col-lg-12">
            <div class="table-responsive">
            <div class="">
+           <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                             <a href="recetas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            <?php
+                        }
+                      ?>
                     </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
@@ -59,7 +65,13 @@ $usuarios=$gsent->fetchAll();
                 <th class="table-dark">2. Cod. Medic.</th>
                 <th class="table-dark">Cantidad 2</th>
 
-                <th class="table-dark">Edicion</th>
+                <?php
+                      if($eleccionmes==$idmes){
+                      ?>
+                     <th class="table-dark">accion</th>
+                     <?php
+                        }
+                      ?>
                      </thead>
                 <tbody>
                     <?php
@@ -80,20 +92,23 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['2Cod_medico']?></td>
                     <td><?php echo $usuario['Cantidad2']?></td>
 
+
+                    <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                     <td>
                     <center>
                         <a href="recetas/editar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
 
 
-                        <?php
-                        if($rolregister==1){
-                        ?> 
-                        <a href="recetas/eliminar.php?Idrecetass=<?php echo $usuario['Idrecetas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
+
+                        <a href="recetas/eliminar.php?Idrecetas=<?php echo $usuario['Idrecetas']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                       </a>
-                      <?php
-                        }
-                      ?>
+
                     </center>
+                    <?php
+                        }
+                    ?>
                   </tr>
                     <?php
                         }

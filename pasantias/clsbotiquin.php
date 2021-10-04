@@ -52,7 +52,13 @@ include_once 'verificacion.php';
            <div class="col-lg-12">
            <div class="table-responsive">
            <div class="">
+           <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                             <a href="clsbotiquin/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            <?php
+                        }
+                      ?>
                     </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                      <thead>
@@ -60,7 +66,13 @@ include_once 'verificacion.php';
                      <th class="table-dark">Medicamento</th>
                      <th class="table-dark">Cantidad recibida</th>
                      <th class="table-dark">estado</th>
+                     <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                      <th class="table-dark">accion</th>
+                     <?php
+                        }
+                      ?>
 
                      </thead>
                 <tbody>
@@ -82,13 +94,18 @@ include_once 'verificacion.php';
                       $estado="Inactivo"; 
                     }
                     echo $estado?></td>
-
+                    <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                     <td>
                     <center>
                         <a href="clsbotiquin/eliminar.php?datos=<?php echo $usuario['Idclsbotiquin']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
                         </a>
                       
                     </center>
+                    <?php
+                        }
+                    ?>
                   </tr>
                     <?php
                         }
@@ -107,7 +124,7 @@ include_once 'verificacion.php';
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
-    <script src="Datatables/js.js"></script>
+    <script src="Datatables/clsbotiquin.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->

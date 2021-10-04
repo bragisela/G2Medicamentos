@@ -4,7 +4,7 @@ $(document).ready(function() {
           if (data[3] =="Inactivo"){
 
             $("td",row).css({
-              'background-color':'green'
+              'background-color':'red'
             });
           }
         },

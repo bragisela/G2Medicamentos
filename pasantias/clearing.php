@@ -45,7 +45,13 @@ $usuarios=$gsent->fetchAll();
             <div class="row">
                 <div class="col-lg">
                     <div class="">
+                    <?php
+                      if($eleccionmes==$idmes){
+                      ?>
                             <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            <?php
+                        }
+                      ?>
                     </div>
                 </div>
             </div>
@@ -64,7 +70,7 @@ $usuarios=$gsent->fetchAll();
                      <th class="table-dark">Cantidad</th>
                      <th class="table-dark">Tipo</th>
                      <th class="table-dark">Recibido/Enviado</th>
-                     <th class="table-dark">accion</th>
+
 
                      </thead>
                 <tbody>
@@ -78,17 +84,6 @@ $usuarios=$gsent->fetchAll();
                     <td><?php echo $usuario['Tipo']?></td>
                     <td><?php echo $usuario['Otrocaps']?></td>
 
-                    <td>
-                    <center>
-                        <a href="clearing/editar.php?Idclearing=<?php echo $usuario['Idclearing']?>"><img style="filter: invert(100%);" src="imagenes/edit (1).png"/></a>
-
-
-                        
-                        <a href="clearing/eliminar.php?Idclearing=<?php echo $usuario['Idclearing']?>" onclick="return confirm('¿Quiere borrar a esta persona?')"><img style="filter: invert(100%);" src="imagenes/delete.png"/>
-                      </a>
-                      
-                    </center>
-                  </tr>
                     <?php
                         }
                     ?>

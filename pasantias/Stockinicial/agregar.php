@@ -23,6 +23,73 @@ if($_POST){
     }else{
     $agregar -> execute(array($Codigo,$Medicamento,$Stockinicial,$idregister,$eleccionmes));
     }
+
+    $cod1=0;
+    $sql ="SELECT Codigo FROM medicamentos where Codigo=$Codigo and Idusuario=$idregister and mes=$eleccionmes+1";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cod));
+    $resultado=$sentencia->fetch();
+    $cod1 = $resultado['Codigo'];
+
+
+    $cod=0;
+    $sql ="SELECT Codigo,cantidad FROM medicamentos where Codigo=$Codigo and Idusuario=$idregister and mes=$eleccionmes";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cod));
+    $resultado=$sentencia->fetch();
+    
+    $cod = $resultado['Codigo'];
+    $cant=0;
+    $cant = $resultado['cantidad'];
+    $total = $cant + $Stockinicial;
+    
+    echo $cant;echo "<br>";
+    echo $total;echo "<br>";
+
+    if($cod==$Codigo)
+    {
+    $sql = "UPDATE medicamentos set cantidad=? where Codigo=$cod and Idusuario=$idregister and mes=$eleccionmes";
+    $sentencia_editar = $pdo->prepare($sql);
+    $sentencia_editar->execute(array($total));
+
+    echo "sabas";
+    }else{
+    $sql_agregar = 'INSERT INTO medicamentos (Codigo,Medicamento,cantidad,Idusuario,mes) VALUES (?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    $agregar->execute(array($Codigo,$Medicamento,$Stockinicial,$idregister,$eleccionmes));
+    echo "asdfdsf";
+    }
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    if($cod1==$Codigo)
+    {
+    $sql = "UPDATE medicamentos set cantidad=? where Codigo=$cod1 and Idusuario=$idregister and mes=$eleccionmes+1";
+    $sentencia_editar = $pdo->prepare($sql);
+    $sentencia_editar->execute(array($total));
+
+    echo "sabas";
+    }else{
+    $sql_agregar = 'INSERT INTO medicamentos (Codigo,Medicamento,cantidad,Idusuario,mes) VALUES (?,?,?,?,?)';
+    $agregar = $pdo->prepare($sql_agregar);
+    $agregar->execute(array($Codigo,$Medicamento,$Stockinicial,$idregister,$eleccionmes+1));
+    echo "asdfdsf";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   //cerrar
     $agregar = null;
     $pdo = null;
