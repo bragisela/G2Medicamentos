@@ -2,11 +2,15 @@
 include_once 'php/conexion.php';
 include_once 'verificacion.php';
 if($_POST){
-$_SESSION ["eleccionRegister"] = $_POST["eleccion"];
+$_SESSION ["eleccionRegister"] = $_POST["eleccion1"];
 $eleccionRegister = $_SESSION ['eleccionRegister'];
 header("Location:index.php");
 }
 
+$sql_leer = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
+  $gsent = $pdo->prepare($sql_leer);
+  $gsent->execute();
+  $resultado = $gsent->fetchAll();
 
 
 
@@ -49,12 +53,26 @@ header("Location:index.php");
     <form action="index1.php" method="POST">
 
     <div class=" w3l-form-group">
-                <label for="usuario">Caps:</label>
-                <div class="group">
-                    <i class="fas fa-user" style="color: #0275d8;"></i>
-                    <input type="text" class="form-control" placeholder="Nombre del Caps" name="eleccion"/>
-                </div>
+                
+                <div class="col-sm-12">
+                    
+              <label for="usuario" class="form-label">Caps:</label>
+              <i class="fas fa-user" style="color: #0275d8;"></i>
+              <select type="text" id="usuarios" class="form-select" name="eleccion1" onchange="Caps()">
+              <option value="0">Seleccione:</option>
+
+                <?php foreach($resultado as $dato): ?>
+                    
+                    <option value="<?php echo $dato['Idusuario'] ?>"> <?php echo $dato['Nombre'] ?></option>
+                    
+
+                <?php endforeach ?>
+                </select>
+              
+            </div>           
+            Referencia: <input type="text" id="eleccion" name="">     
                 <br>
+        Nombre: <input type="text" id="name" disabled>
                 <br>
                 <button type="submit" name="submit" style="background: #0275d8;">Ingresar</button>
         </form>
@@ -66,5 +84,5 @@ header("Location:index.php");
     </footer>
 
 </body>
-
+<script src="Datatable/javascripts/js.js"></script>
 </html>

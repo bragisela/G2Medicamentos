@@ -3,6 +3,7 @@
 include_once '../php/conexion.php';
 include_once '../verificacion.php';
 
+
 $sql_leer = 'SELECT * FROM clearing';
 
 $gsent = $pdo->prepare($sql_leer);
@@ -10,9 +11,10 @@ $gsent->execute();
 $resultado = $gsent->fetchAll();
 
 
-
-
-
+$messias = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
+  $gsento = $pdo->prepare($messias);
+  $gsento->execute();
+  $resultado1 = $gsento->fetchAll();
 
 
 //Agregar
@@ -221,7 +223,7 @@ if($_POST){
         <div class="form-signin">
             <div class="col-md-12">
             <?php if(!$_GET): ?>
-          <h1>Agregar Personas</h1>
+          <h1>Agregar</h1>
           <form method="POST">
           <div class="row g-3">
 
@@ -243,9 +245,19 @@ if($_POST){
 
             <div class="col-12">
               <label for="text" class="form-label">enviar a</label>
-              <input type="text" class="form-control bg-light text-dark"  name="Otrocaps" value="" required>
-            </div>
+              <select type="text" id="usuarios" class="form-select" name="Otrocaps" onchange="Caps()">
+              <option value="0">Seleccione:</option>
 
+                <?php foreach($resultado1 as $dato): ?>
+                    
+                    <option value="<?php echo $dato['Idusuario'] ?>"> <?php echo $dato['Nombre'] ?></option>
+                    
+
+                <?php endforeach ?>
+                </select>
+              
+            </div>
+            
             <br>
               <button class="btn btn-primary col-sm-5">Agregar</button>
               <a class="btn btn-primary col-sm-5" href="../clearing.php" >Volver al Datatable</a></center>
@@ -255,4 +267,5 @@ if($_POST){
             </div>
         </div>
     </body>
+    <script src="../Datatable/javascripts/js.js"></script>
 </html>

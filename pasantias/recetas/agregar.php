@@ -70,7 +70,7 @@ if($_POST){
         <div class="form-signin">
             <div class="col-md-12">
             <?php if(!$_GET): ?>
-          <h1>Agregar Personas</h1>
+          <h1>Agregar</h1>
           <form method="POST">
           <div class="row g-3">
 

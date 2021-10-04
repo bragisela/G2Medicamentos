@@ -101,6 +101,12 @@ if(($rolregister==1) && ($eleccionRegister==0)){
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
    <!--  </head><h1>Resumen mensual</h1> -->
     <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+    <style>    
+  #sas6{
+    color: #e6e6e6;
+    text-shadow: 1px 1px 10px #e6e6e6;
+    }
+    </style>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

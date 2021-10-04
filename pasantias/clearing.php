@@ -34,6 +34,7 @@ $usuarios=$gsent->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSS -->
     <link rel="text/css"href="bocs/style.css">
+    <link href="styles.css" rel="stylesheet" />
     <link rel="stylesheet"href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -50,6 +51,7 @@ $usuarios=$gsent->fetchAll();
                       ?>
                             <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
                             <?php
+                            echo "<br>";
                         }
                       ?>
                     </div>
@@ -58,6 +60,12 @@ $usuarios=$gsent->fetchAll();
         </div>
 
   </head>
+  <style>    
+  #sas1{
+    color: #e6e6e6;
+    text-shadow: 1px 1px 10px #e6e6e6;
+    }
+    </style>
   <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
     <div class="container">
        <div class="row">
@@ -122,6 +130,7 @@ $(document).ready(function() {
     <script src="DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script src="DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
     <script src="DataTables/Butons-1.7.1/js/buttons.html5.min.js"></script>
+    
 
 
 
