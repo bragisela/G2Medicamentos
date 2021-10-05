@@ -72,6 +72,11 @@ if(!$resultado['Nombre']){
   echo "id mes seleccionado: ";
   echo $eleccionmes;echo('<br>');
 
+  $idmes = $_SESSION ["idmes"];
+  
+  echo "id mes actual: ";
+  echo $idmes;echo('<br>');
+
 $sql_leer="SELECT * FROM medicamentos where Idusuario=$idregister and mes=$eleccionmes";
 $gsent=$pdo->prepare($sql_leer);
 $gsent->execute();
@@ -81,7 +86,44 @@ if(($rolregister==1) && ($eleccionRegister==0)){
     header("Location:index1.php");
 }
 
+error_reporting(0);
 
+$meses1 = "SELECT * FROM medicamentos where Idusuario=$idregister and mes=$eleccionmes";
+$gsentas = $pdo->prepare($meses1);
+$gsentas->execute();
+$mesresultado = $gsentas->fetchAll();
+
+
+foreach($mesresultado as $dato):
+
+    $cantidad=$dato['cantidad'];
+    $codigo=$dato['Codigo'];
+
+    echo $codigo;
+    echo ":";
+    echo $cantidad;
+    echo ":";
+    echo $dato['Medicamento'];
+    echo "<br>";
+
+    $cod=0;
+    $sql ="SELECT * FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$idmes+1";
+    $sentencia= $pdo->prepare($sql);
+    $sentencia->execute(array($cod));
+    $resultado=$sentencia->fetch();
+    $cod=$resultado['Codigo'];
+    
+
+     if($cod==$codigo){
+        $sql = "UPDATE medicamentos set cantidad=? where Codigo=$cod and Idusuario=$idregister and mes=$idmes+1";
+        $sentencia_editar = $pdo->prepare($sql);
+        $sentencia_editar->execute(array($cantidad));
+    }else{
+        $sql_agregar = "INSERT INTO medicamentos (Codigo,cantidad,Medicamento,mes,Idusuario) VALUES (?,?,?,?,?)";
+        $agregar = $pdo->prepare($sql_agregar);
+        $agregar->execute(array($dato['Codigo'],$dato['cantidad'],$dato['Medicamento'],$idmes+1,$idregister));
+    }
+endforeach
 
 
 ?>

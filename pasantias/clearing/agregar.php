@@ -39,11 +39,7 @@ if($_POST){
     $direccionregister = $_SESSION ["direccionregister"];
 
     $cant1=0;
-    if($rolregister==1){
-    $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionRegister and mes=$eleccionmes";
-    }else{
     $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$eleccionmes";
-    }
     $sentencia= $pdo->prepare($sql);
     $sentencia->execute(array($cant1));
     $resultado=$sentencia->fetch();
@@ -59,11 +55,8 @@ if($_POST){
 
     $sql_agregar = 'INSERT INTO clearing (Fecha,Codigo,Cantidad,Tipo,Otrocaps,Idusuario,mes) VALUES (?,?,?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    if($rolregister==1){
-    $agregar->execute(array($fecha,$codigo,$cantidad,$tipo,$direccionregister,$eleccionRegister,$eleccionmes));
-    }else{
-      $agregar->execute(array($fecha,$codigo,$cantidad,$tipo,$direccionregister,$idregister,$eleccionmes));
-    }
+    $agregar->execute(array($fecha,$codigo,$cantidad,$tipo,$direccionregister,$idregister,$eleccionmes));
+  
 
     $sas="messi";
 
@@ -78,20 +71,14 @@ if($_POST){
 
     $sql_agregar = 'INSERT INTO clearing (Fecha,Codigo,Cantidad,Tipo,Otrocaps,Idusuario,mes) VALUES (?,?,?,?,?,?,?)';
     $agregar = $pdo->prepare($sql_agregar);
-    if($rolregister==1){
-    $agregar->execute(array($fecha,$codigo,$cantidad,$tipe,$sas,$Otrocaps,$eleccionmes));
-    }else{
       $agregar->execute(array($fecha,$codigo,$cantidad,$tipe,$sas,$Otrocaps,$eleccionmes));
-    }
+    
     
      /* ----------------------------------------------------------------------------------- */
 
      $cod=0;
-     if($rolregister==1){
-     $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister and mes=$eleccionmes";
-     }else{
      $sql ="SELECT Codigo FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$eleccionmes";
-     }
+     
      $sentencia= $pdo->prepare($sql);
      $sentencia->execute(array($cod));
      $resultado=$sentencia->fetch();
@@ -101,11 +88,8 @@ if($_POST){
 
      $cant=0;
      $total=0;
-     if($rolregister==1){
-     $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister and mes=$eleccionmes";
-     }else{
      $sql ="SELECT cantidad FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$eleccionmes";
-     }
+     
      $sentencia= $pdo->prepare($sql);
      $sentencia->execute(array($cant));
      $resultado=$sentencia->fetch();
@@ -115,11 +99,8 @@ if($_POST){
      echo"<br>";
 
      $cantsalidas=0;
-     if($rolregister==1){
-     $sql ="SELECT salidasclearing,Medicamento FROM medicamentos where Codigo=$codigo and Idusuario=$eleccionregister and mes=$eleccionmes";
-     }else{
      $sql ="SELECT salidasclearing,Medicamento FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$eleccionmes";
-     }
+     
      $sentencia= $pdo->prepare($sql);
      $sentencia->execute(array($cantsalidas));
      $resultado=$sentencia->fetch();
@@ -131,11 +112,8 @@ if($_POST){
  
      if($cod==$codigo)
      {
-       if($rolregister==1){
-       $sql = "UPDATE medicamentos set cantidad=?,salidasclearing=? where Codigo=$cod and Idusuario=$eleccionregister and mes=$eleccionmes";
-       }else{
+
        $sql = "UPDATE medicamentos set cantidad=?,salidasclearing=? where Codigo=$cod and Idusuario=$idregister and mes=$eleccionmes";
-       }
        $sentencia_editar = $pdo->prepare($sql);
        $sentencia_editar->execute(array($total,$totalsalidas));
        }

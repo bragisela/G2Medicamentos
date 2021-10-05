@@ -8,9 +8,9 @@ header("Location:index.php");
 }
 
 $sql_leer = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
-  $gsent = $pdo->prepare($sql_leer);
-  $gsent->execute();
-  $resultado = $gsent->fetchAll();
+$gsent = $pdo->prepare($sql_leer);
+$gsent->execute();
+$resultado = $gsent->fetchAll();
 
 
 
