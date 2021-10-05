@@ -15,6 +15,10 @@ h1 {
     letter-spacing: 2px;
     padding: 50px 0;
 }
+.form-select{
+    font-size: 20px;
+    width: 100%;
+  }
 
 h2 {
     margin: 0;

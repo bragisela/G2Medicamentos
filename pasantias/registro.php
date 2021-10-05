@@ -112,6 +112,10 @@
           font-size:50px;                 
         }
       }
+      .form-select{
+    font-size: 20px;
+    width: 100%;
+  }
      
     </style>   
     <!-- Custom styles for this template -->

@@ -8,8 +8,14 @@
   }
 
   .mara{
-    height:40px;
+    height:50px;
   }
+
+  .col-2{
+    margin-left:3px;
+  }
+
+
 </style>
 <nav class="mara navbar navbar-expand-lg bg-primary navbar-dark">
 <div class="container-fluid">
@@ -21,7 +27,7 @@
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
     <li class="nav-item">
-    <a class="nav-link active" id="sas5" aria-current="page" href="stockinicial.php">Stock Inicial</a>
+    <a class="nav-link active" id="sas5" aria-current="page" href="stockinicial.php">StockInicial</a>
     </li>
     <li class="nav-item">
     <a class="nav-link active" id="sas2" aria-current="page" href="clsbotiquin.php">ClsBotiquin</a>
@@ -53,7 +59,7 @@
               <option value="09">Septiembre</option>
               <option value="10">Octubre</option>
               <option value="11">Noviembre</option>
-              <option value="12">diciembre</option>
+              <option value="12">Diciembre</option>
               </select>
               </div>
               <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

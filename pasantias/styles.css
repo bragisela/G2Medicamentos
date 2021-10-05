@@ -76,6 +76,10 @@ input[type="submit"] {
     margin: 15px auto;
 
   }
+  .form-select{
+    font-size: 20px;
+    width: 100%;
+  }
   .form-signin {
     background-color: #3d3d3d;
     display: center;

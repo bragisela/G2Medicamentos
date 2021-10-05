@@ -8,9 +8,9 @@ header("Location:index.php");
 }
 
 $sql_leer = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
-$gsent = $pdo->prepare($sql_leer);
-$gsent->execute();
-$resultado = $gsent->fetchAll();
+  $gsent = $pdo->prepare($sql_leer);
+  $gsent->execute();
+  $resultado = $gsent->fetchAll();
 
 
 
@@ -44,6 +44,12 @@ $resultado = $gsent->fetchAll();
 
 
 <body style="background-image: url('images/cover4.jpg');">
+<style>
+    .form-select{
+    font-size: 20px;
+    width: 100%;
+  }
+</style>
     
 <main class="form-signin">
   
@@ -54,10 +60,8 @@ $resultado = $gsent->fetchAll();
 
     <div class=" w3l-form-group">
                 
-                <div class="col-sm-12">
-                    
+              <div class="col-sm-12">                    
               <label for="usuario" class="form-label">Caps:</label>
-              <i class="fas fa-user" style="color: #0275d8;"></i>
               <select type="text" id="usuarios" class="form-select" name="eleccion1" onchange="Caps()">
               <option value="0">Seleccione:</option>
 
