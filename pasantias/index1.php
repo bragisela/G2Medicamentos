@@ -74,13 +74,13 @@ $sql_leer = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
                 </select>
               
             </div>           
-            Referencia: <input type="text" id="eleccion" name="">     
+           <!--  Referencia: <input type="text" id="eleccion" name=""> -->     
                 <br>
-        Nombre: <input type="text" id="name" disabled>
+       <!--  Nombre: <input type="text" id="name" disabled> -->
                 <br>
                 <button type="submit" name="submit" style="background: #0275d8;">Ingresar</button>
         </form>
-        <p class=" w3l-register-p"><a href="registro.php" class="register"> Registrar Caps</a></p>
+        <p class=" w3l-register-p"><a href="data/index.php" class="register"> Registrar Caps</a></p>
     </div>
     </main>
     <footer>
