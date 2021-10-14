@@ -127,7 +127,7 @@ $usuarios=$gsent->fetchAll();
     <!-- Custom styles for this template -->
     <link href="../../form-validation.css" rel="stylesheet">
   </head>
-  <body style="background-image: url('../images/cover4.jpg');">
+  <body style="background-color: #1a4378;">
 
    <link rel="stylesheet"href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -199,7 +199,7 @@ $usuarios=$gsent->fetchAll();
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- links js -->
-    <script src="Datatables/js.js"></script>
+    <script src="js.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->
     <script src="DataTables/datatables.min.js"></script>

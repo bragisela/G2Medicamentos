@@ -66,7 +66,7 @@ $usuarios=$gsent->fetchAll();
     text-shadow: 1px 1px 10px #e6e6e6;
     }
     </style>
-  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+  <body class="sb-nav-fixed" style="background-color: #1a4378;">
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
@@ -101,7 +101,7 @@ $usuarios=$gsent->fetchAll();
        </div>
     </div>
 
-    <script>
+    <!-- <script>
 $(document).ready(function() {
     var tabla=$('#usuarios').DataTable( {
         createdRow:function(row,data,index){
@@ -110,15 +110,16 @@ $(document).ready(function() {
               $("td",row).css({
                 'background-color':'green'
               });
-            }
+            }s
           },
         });
       });
-      </script>
+      </script> -->
        
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+    <script src="clearing/js.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 

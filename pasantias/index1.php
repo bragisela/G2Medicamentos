@@ -43,7 +43,7 @@ $sql_leer = 'SELECT Idusuario, Nombre FROM usuarios where Idrol=2';
 </head>
 
 
-<body style="background-image: url('images/cover4.jpg');">
+<body style="background-color: #1a4378;">
 <style>
     .form-select{
     font-size: 20px;
