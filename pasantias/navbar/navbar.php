@@ -1,4 +1,3 @@
-
 <link href="styles.css" rel="stylesheet" />
 <style>
   .messi{
@@ -11,9 +10,15 @@
     height:50px;
   }
 
-  .col-2{
+  .as{
     margin-left:3px;
+
   }
+  .asa{
+    margin-left:3px;
+
+  }
+
 
 
 </style>
@@ -43,10 +48,11 @@
     </li>
     
   </ul>
-  <div class="col-2">
+  <div class="as col-2">
   <form action="meses.php" method="POST">
+    
   <label for="meses" class="form-label"></label>
-              <select class="form-control bg-light text-dark" aria-label="form-control bg-light text-dark" name="mes" value="" required>
+              <select class="sape form-control bg-light text-dark" style="margin-top: 8px;" aria-label="form-control bg-light text-dark" name="mes" value="" required>
               <option value="none">Elegir mes</option>
               <option value="01">Enero</option>
               <option value="02">Febrero</option>
@@ -63,7 +69,9 @@
               </select>
               </div>
               <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+              <div class="asa col-2">
               <button class="messi btn btn-outline-light">aplicar</button>
+              </div>
               </ul>
               </form>
 

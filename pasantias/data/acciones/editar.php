@@ -135,9 +135,9 @@ $usuarios=$gsent->fetchAll();
   </head>
   <body class="bg-light">
 
-  <h1 style="color: white;">Registrarse</h1>
+
   <div class=" w3l-login-form" style="background: #292b2c;" >
-    <h2 style="color: white;">Complete los datos</h2>
+
       <div class=" w3l-form-group">
         <?php if($_GET): ?>
             <h2>EDITAR USUARIOS</h2>

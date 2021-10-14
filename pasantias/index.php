@@ -40,18 +40,18 @@ if(!$resultado['Nombre']){
   {
   echo "Nombre: ";
   echo $nombreRegister;echo('<br>');
-  echo "Clave: ";
+/*   echo "Clave: ";
   echo $claveRegister;echo('<br>');
   echo "Clave Hash: ";
   echo $resultado['Clave'];echo('<br>');
   echo "numero de rol: ";
-  echo $resultado['Idrol'];echo('<br>');
+  echo $resultado['Idrol'];echo('<br>'); */
 /*   echo "numero de sas: ";
   echo $resultado['Idusuario'];echo('<br>'); */
   }else{
       header("Location:login.php");
   }
-
+  error_reporting(0);
   $_SESSION ["rolregister"] = $resultado['Idrol'];
   $rolregister = $_SESSION ["rolregister"];
 
@@ -59,13 +59,13 @@ if(!$resultado['Nombre']){
   $idregister = $_SESSION ["idregister"];
 
   $eleccionRegister = $_SESSION ['eleccionRegister'];
-  echo "numero de registro admin: ";
-  echo $eleccionRegister;echo('<br>');
+/*   echo "numero de registro admin: ";
+  echo $eleccionRegister;echo('<br>'); */
 
   if($rolregister==1){
     $idregister=$eleccionRegister;
-    echo "id de registro con idregister: ";
-    echo $idregister;echo('<br>');
+/*     echo "id de registro con idregister: ";
+    echo $idregister;echo('<br>'); */
   }
 
   $eleccionmes = $_SESSION ['eleccionmes'];
@@ -86,7 +86,7 @@ if(($rolregister==1) && ($eleccionRegister==0)){
     header("Location:index1.php");
 }
 
-error_reporting(0);
+
 
 $meses1 = "SELECT * FROM medicamentos where Idusuario=$idregister and mes=$eleccionmes";
 $gsentas = $pdo->prepare($meses1);
@@ -98,13 +98,13 @@ foreach($mesresultado as $dato):
 
     $cantidad=$dato['cantidad'];
     $codigo=$dato['Codigo'];
-
+/* 
     echo $codigo;
     echo ":";
     echo $cantidad;
     echo ":";
     echo $dato['Medicamento'];
-    echo "<br>";
+    echo "<br>"; */
 
     $cod=0;
     $sql ="SELECT * FROM medicamentos where Codigo=$codigo and Idusuario=$idregister and mes=$idmes+1";

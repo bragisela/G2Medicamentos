@@ -23,12 +23,12 @@ if(!$resultado['Nombre']){
   {
   echo "Nombre: ";
   echo $nombreRegister;echo('<br>');
-  echo "Clave: ";
+/*   echo "Clave: ";
   echo $claveRegister;echo('<br>');
   echo "Clave Hash: ";
   echo $resultado['Clave'];echo('<br>');
   echo "numero de rol: ";
-  echo $resultado['Idrol'];echo('<br>');
+  echo $resultado['Idrol'];echo('<br>'); */
 /*   echo "numero registro sin variable: ";
   echo $resultado['Idusuario'];echo('<br>'); */
   }else{
@@ -37,20 +37,20 @@ if(!$resultado['Nombre']){
 
   $_SESSION ["idregister"] = $resultado['Idusuario'];
   $idregister = $_SESSION ["idregister"];
-  echo "id de registro: ";
-  echo $idregister;echo('<br>');
+/*   echo "id de registro: ";
+  echo $idregister;echo('<br>'); */
 
   $eleccionRegister = $_SESSION ['eleccionRegister'];
-  echo "numero de registro con eleccionregister: ";
-  echo $eleccionRegister;echo('<br>');
+/*   echo "numero de registro con eleccionregister: ";
+  echo $eleccionRegister;echo('<br>'); */
 
   $_SESSION ["rolregister"] = $resultado['Idrol'];
   $rolregister = $_SESSION ["rolregister"];
   
   if($rolregister==1){
     $idregister=$eleccionRegister;
-    echo "id de registro con idregister: ";
-    echo $idregister;echo('<br>');
+/*     echo "id de registro con idregister: ";
+    echo $idregister;echo('<br>'); */
   }
 
   $eleccionmes = $_SESSION ['eleccionmes'];

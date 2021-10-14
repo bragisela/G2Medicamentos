@@ -61,19 +61,7 @@ if($_POST){
     }
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-    if($cod1==$Codigo)
-    {
-    $sql = "UPDATE medicamentos set cantidad=? where Codigo=$cod1 and Idusuario=$idregister and mes=$eleccionmes+1";
-    $sentencia_editar = $pdo->prepare($sql);
-    $sentencia_editar->execute(array($total));
 
-    echo "sabas";
-    }else{
-    $sql_agregar = 'INSERT INTO medicamentos (Codigo,Medicamento,cantidad,Idusuario,mes) VALUES (?,?,?,?,?)';
-    $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($Codigo,$Medicamento,$Stockinicial,$idregister,$eleccionmes+1));
-    echo "asdfdsf";
-    }
 
 
 

@@ -105,7 +105,7 @@ if($_POST){
         <div class="form-signin">
             <div class="col-md-12">
             <?php if(!$_GET): ?>
-          <h1>Agregar Personas</h1>
+          <h1>Agregar</h1>
           <form method="POST">
           <div class="row g-3">
 
@@ -115,7 +115,7 @@ if($_POST){
             </div>
 
             <div class="col-12">
-              <label for="text" class="form-label">Ingrese el Codigo Medicicamento</label>
+              <label for="text" class="form-label">Ingrese el Codigo Medicamento</label>
               <input type="text" class="form-control bg-light text-dark"  name="Cod_medico" value="" required>
             </div>
 
@@ -131,9 +131,7 @@ if($_POST){
                   <option value="Salidas no apta">Salidas no apta</option>
                   <option value="Otras salidas">Otras salidas</option>
               </select>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+
             </div>
 
             <br>

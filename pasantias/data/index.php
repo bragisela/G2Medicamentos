@@ -153,9 +153,9 @@ $usuarios=$gsent->fetchAll();
            
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                      <thead>
-                    <th class="table-dark">Idrol</th>
+                    <th class="table-dark">Rol</th>
                     <th class="table-dark">Nombre</th>
-                    <th class="table-dark">Clave</th>
+
                     <th class="table-dark">Accion</th>
                 </thead>
                 <tbody>
@@ -165,9 +165,17 @@ $usuarios=$gsent->fetchAll();
 
                     <tr>
 
-                        <td><?php echo $usuario['Idrol']?></td>
+                        <td><?php
+                        $rol=$usuario['Idrol'];
+                        if($rol==1){
+                          $rol="Admin";
+                        }else{
+                          $rol="Caps";
+                        }
+                        
+                        echo $rol?></td>
                         <td><?php echo $usuario['Nombre']?></td>
-                        <td><?php echo $usuario['Clave']?></td>
+
 
                         <td>
                           <center>
@@ -181,6 +189,7 @@ $usuarios=$gsent->fetchAll();
                 </tbody>
             </table>
            </div>
+       </div>
        </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

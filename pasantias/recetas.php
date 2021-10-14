@@ -42,10 +42,16 @@ $usuarios=$gsent->fetchAll();
     color: #e6e6e6;
     text-shadow: 1px 1px 10px #e6e6e6;
     }
+
+  .sos{
+    width: 95%;
+    margin-left:2%;
+
+  }
     </style>
-    <div class="container">
-       <div class="row">
-           <div class="col-lg-12">
+
+    <div class="sos">
+
            <div class="table-responsive">
            <div class="">
            <?php
@@ -59,24 +65,24 @@ $usuarios=$gsent->fetchAll();
                     </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
-                <th class="table-dark">Fecha</th>
-                <th class="table-dark">Apellido</th>
-                <th class="table-dark">Nombres</th>
+                <th class="table-dark">Fecha<br> &nbsp</th>
+                <th class="table-dark">Apellido<br> &nbsp</th>
+                <th class="table-dark">Nombres<br> &nbsp</th>
                 <th class="table-dark">Tipo DNI</th>
                 <th class="table-dark">Nro. DNI</th>
                 <th class="table-dark">Fecha nacimiento</th>
-                <th class="table-dark">Sexo</th>
+                <th class="table-dark">Sexo<br> &nbsp</th>
                 <th class="table-dark">Diagnostico 1</th>
                 <th class="table-dark">Diagnostico 2</th>
-                <th class="table-dark">1. Cod. Medic.</th>
+                <th class="table-dark">Codigo 1</th>
                 <th class="table-dark">Cantidad 1</th>
-                <th class="table-dark">2. Cod. Medic.</th>
+                <th class="table-dark">Codigo 2</th>
                 <th class="table-dark">Cantidad 2</th>
 
                 <?php
                       if($eleccionmes==$idmes){
                       ?>
-                     <th class="table-dark">accion</th>
+                     <th class="table-dark">accion<br> &nbsp</th>
                      <?php
                         }
                       ?>
@@ -124,6 +130,7 @@ $usuarios=$gsent->fetchAll();
                 </tbody>
             </table>
            </div>
+                      
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

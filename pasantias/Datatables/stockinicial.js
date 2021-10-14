@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var tabla = $('#usuarios').DataTable( {
-      createdRow:function(row,data,index){
+$('#usuarios').DataTable( {
+      createdRow:function(row,data){
           if (data[3] =="Inactivo"){
 
             $("td",row).css({

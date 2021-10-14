@@ -111,7 +111,7 @@ if($_POST){
               <input type="text" class="form-control bg-light text-dark"  name="Diagnostico2" value="" required>
             </div>
             <div class="col-12">
-              <label for="text" class="form-label">Cod. medico 1</label>
+              <label for="text" class="form-label">Codigo 1</label>
               <input type="text" class="form-control bg-light text-dark"  name="1Cod_medico" value="" required>
             </div>
             <div class="col-12">
@@ -119,7 +119,7 @@ if($_POST){
               <input type="text" class="form-control bg-light text-dark"  name="Cantidad1" value="" required>
             </div>
             <div class="col-12">
-              <label for="text" class="form-label">Cod. medico 2</label>
+              <label for="text" class="form-label">Codigo 2</label>
               <input type="text" class="form-control bg-light text-dark"  name="2Cod_medico" value="" required>
             </div>
             <div class="col-12">
