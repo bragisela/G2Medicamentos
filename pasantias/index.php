@@ -142,7 +142,8 @@ endforeach
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
    <!--  </head><h1>Resumen mensual</h1> -->
-    <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+    <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
+    <br>
     <style>    
   #sas6{
     color: #e6e6e6;

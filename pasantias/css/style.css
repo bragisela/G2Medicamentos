@@ -1,9 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background: url(../images/cover4.jpg) no-repeat 0px 0px;
+    background-color: #1a4378;
     min-height: 100vh;
     background-size: cover;
+    color: #ffffff;
     font-family: 'Raleway', sans-serif;
 }
 h1 {

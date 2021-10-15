@@ -74,7 +74,7 @@ if($_POST){
 </head>
 
 
-<body>
+<body style="background-color: #1a4378;">
 
 <main class="form-signin">
     <h1>iniciar Sesion</h1>

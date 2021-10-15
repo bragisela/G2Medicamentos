@@ -102,12 +102,13 @@ if($_POST){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles.css" type="text/css">
+    
 
 <title>Agregar</title>
     </head>
 
     <center>
-    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
+    <body class="sb-nav-fixed" style="background-color: #1a4378;">
       <br>
         <div class="form-signin">
             <div class="col-md-12">

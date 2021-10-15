@@ -53,7 +53,7 @@ include_once 'verificacion.php';
     text-shadow: 1px 1px 10px #e6e6e6;
     }
     </style>
-  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+  <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
@@ -64,7 +64,7 @@ include_once 'verificacion.php';
                       ?>
                             <a href="clsbotiquin/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
                             <?php
-                            echo "<br>";
+                              
                         }
                       ?>
                     </div>
@@ -132,7 +132,7 @@ include_once 'verificacion.php';
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
-    <script src="Datatables/clsbotiquin.js"></script>
+    <script src="clsbotiquin/js.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->

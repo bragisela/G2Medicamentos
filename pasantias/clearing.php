@@ -42,22 +42,7 @@ $usuarios=$gsent->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
 
 <head>
-    <div class="container">
-            <div class="row">
-                <div class="col-lg">
-                    <div class="">
-                    <?php
-                      if($eleccionmes==$idmes){
-                      ?>
-                            <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
-                            <?php
-                            echo "<br>";
-                        }
-                      ?>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
   </head>
   <style>    
@@ -66,11 +51,21 @@ $usuarios=$gsent->fetchAll();
     text-shadow: 1px 1px 10px #e6e6e6;
     }
     </style>
-  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+  <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
     <div class="container">
        <div class="row">
            <div class="col-lg-12">
            <div class="table-responsive">
+            <div class="">
+           <?php
+                      if($eleccionmes==$idmes){
+                      ?>
+                            <a href="clearing/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
+                            <?php
+                            
+                        }
+                      ?>
+                    </div>
                 <table id="usuarios" class="table table-hover table-dark" style="width:100%">
                 <thead>
                      <th class="table-dark">Fecha</th>
@@ -101,7 +96,7 @@ $usuarios=$gsent->fetchAll();
        </div>
     </div>
 
-    <script>
+    <!-- <script>
 $(document).ready(function() {
     var tabla=$('#usuarios').DataTable( {
         createdRow:function(row,data,index){
@@ -110,15 +105,16 @@ $(document).ready(function() {
               $("td",row).css({
                 'background-color':'green'
               });
-            }
+            }s
           },
         });
       });
-      </script>
+      </script> -->
        
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
+    <script src="clearing/js.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 

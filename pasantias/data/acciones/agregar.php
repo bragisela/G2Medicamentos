@@ -162,13 +162,13 @@ if($_POST){
     <!-- Custom styles for this template -->
     <link href="../../form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body style="background-color: #1a4378;">
   <h1 style="color: white;">Registrarse</h1>
   <div class=" w3l-login-form" style="background: #292b2c;" >
     <h2 style="color: white;">Complete los datos</h2>
       <div class=" w3l-form-group">
       <?php if(!$_GET): ?>
-        <form action="login.php" method="POST">
+        <form action="agregar.php" method="POST">
         <div class="row g-3">
         <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
@@ -193,9 +193,6 @@ if($_POST){
               <option value="2">Caps</option>
               <option value="1">Admin</option>
               </select>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
             </div>
 
             <hr class="my-4">

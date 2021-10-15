@@ -36,7 +36,7 @@ $usuarios=$gsent->fetchAll();
         </div>
 
   </head>
-  <body class="sb-nav-fixed" style="background-image: url('images/cover4.jpg');">
+  <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
   <style>    
   #sas3{
     color: #e6e6e6;
@@ -44,8 +44,8 @@ $usuarios=$gsent->fetchAll();
     }
 
   .sos{
-    width: 95%;
-    margin-left:2%;
+    width: 100%;
+    margin-left:0%;
 
   }
     </style>
@@ -59,7 +59,7 @@ $usuarios=$gsent->fetchAll();
                       ?>
                             <a href="recetas/agregar.php" style="float: right;" class="btn btn-primary">Agregar</a>
                             <?php
-                            echo "<br>";
+                            
                         }
                       ?>
                     </div>
@@ -136,7 +136,7 @@ $usuarios=$gsent->fetchAll();
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
-    <script src="Datatables/js.js"></script>
+    <script src="recetas/js.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- datatables -->
     <script src="DataTables/datatables.min.js"></script>

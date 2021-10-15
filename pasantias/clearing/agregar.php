@@ -218,7 +218,7 @@ if($_POST){
     </head>
 
     <center>
-    <body class="sb-nav-fixed" style="background-image: url('../images/cover4.jpg');">
+    <body class="sb-nav-fixed" style="background-color: #1a4378;">
       <br>
         <div class="form-signin">
             <div class="col-md-12">

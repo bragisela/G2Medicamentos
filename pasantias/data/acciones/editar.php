@@ -133,7 +133,7 @@ $usuarios=$gsent->fetchAll();
     <!-- Custom styles for this template -->
     <link href="../../form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light">
+  <body class="bg-light" style="background-color: #1a4378;">>
 
 
   <div class=" w3l-login-form" style="background: #292b2c;" >
@@ -147,17 +147,13 @@ $usuarios=$gsent->fetchAll();
         <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
               <input type="text" class="form-control bg-light text-dark"value="<?php echo $resultado_unico['Nombre'] ?>" name="Nombre" placeholder="Jose" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+              
             </div>
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Clave</label>
               <input type="password" id="pass" name="Clave" class="form-control bg-light text-dark" onblur="enviardatos(this)" placeholder="Contraseña123" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+              
             </div>
 
 
@@ -168,9 +164,7 @@ $usuarios=$gsent->fetchAll();
               <option value="1">Admin</option>
               </select>
               <input type="hidden" name="Idusuario" value="<?php echo $resultado_unico['Idusuario'] ?>">
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+              
             </div>
 
             <hr class="my-4">
