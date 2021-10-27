@@ -142,8 +142,12 @@ endforeach
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
    <!--  </head><h1>Resumen mensual</h1> -->
+<<<<<<< HEAD
     <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
     <br>
+=======
+    <body class="sb-nav-fixed" style="background-color: #1a4378;">
+>>>>>>> 98ee616171dad8ff5ad2102527dab1c32d316fa5
     <style>    
   #sas6{
     color: #e6e6e6;

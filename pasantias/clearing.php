@@ -51,7 +51,11 @@ $usuarios=$gsent->fetchAll();
     text-shadow: 1px 1px 10px #e6e6e6;
     }
     </style>
+<<<<<<< HEAD
   <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
+=======
+  <body class="sb-nav-fixed" style="background-color: #1a4378;">
+>>>>>>> 98ee616171dad8ff5ad2102527dab1c32d316fa5
     <div class="container">
        <div class="row">
            <div class="col-lg-12">

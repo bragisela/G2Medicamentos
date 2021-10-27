@@ -36,7 +36,11 @@ $usuarios=$gsent->fetchAll();
         </div>
 
   </head>
+<<<<<<< HEAD
   <body class="sb-nav-fixed" style="background-color: #1a4378; color: white;">
+=======
+  <body class="sb-nav-fixed" style="background-color: #1a4378;">
+>>>>>>> 98ee616171dad8ff5ad2102527dab1c32d316fa5
   <style>    
   #sas3{
     color: #e6e6e6;
