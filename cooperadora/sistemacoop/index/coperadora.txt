@@ -1,0 +1,33 @@
+inner join
+editar select falta
+busqueda socios 
+busqueda pagar cuota falta
+busqueda alumnos
+
+<tbody>
+                        <?php 
+                  $sql="SELECT A.idalumno,S.nombre,A.nombre,A.dni,C.curso FROM alumnos A INNER JOIN socios S ON S.idsocio=A.idsocio
+                        INNER JOIN cursos C ON C.idcurso=A.idcurso
+                        where A.estado=1";
+                        $result_alumnos=mysqli_query($con,$sql);
+
+                        while ($row = mysqli_fetch_array($result_alumnos)) { ?>
+                        
+                          <tr>
+                            <td><?php echo $row[1]?></td>
+                            <td><?php echo $row[2]?></td>
+                            <td><?php echo $row[3]?></td>
+                            <td><?php echo $row[4]?></td>
+                            <td>
+                          <a href="editaralumno.php?id=<?php echo $row['idalumno']?>" class="edit"><i class="material-icons" title="Editar">&#xE254;</i>
+                              </a>
+                          <a href="ElimAlum.php?id=<?php echo $row['idalumno']?>" class="delete" data-toggle="tooltip" class="btn btn-warning" ><i class="material-icons" title="Eliminar">&#xE872;</i></a>
+                              </a>
+                            </td>
+      
+                          
+                          </tr>
+         
+                        <?php } ?>
+                        
+                      </tbody>
